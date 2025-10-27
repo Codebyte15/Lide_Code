@@ -114,6 +114,7 @@ nav ul li a:hover {
 .btn:hover {
   transform: translateY(-2px);
   background: #0090dd;
+  border-color: #0090dd;
 }
 
 /* ABOUT */
@@ -150,6 +151,57 @@ nav ul li a:hover {
   border-radius: 10px;
 }
 
+/* PREVIOUS VERSIONS */
+.history {
+  padding: 60px 10%;
+  background: #151821;
+}
+
+.history h2 {
+  font-size: 2rem;
+  text-align: center;
+  color: #00aaff;
+  margin-bottom: 40px;
+}
+
+.version-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.version-card {
+  background: #1a1d29;
+  padding: 25px;
+  border-radius: 12px;
+  width: 280px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.version-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+}
+
+.version-card h3 {
+  color: #00aaff;
+  margin-bottom: 10px;
+}
+
+.version-card p {
+  color: #bbb;
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+
+.version-card .buttons.small {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
 /* FOOTER */
 footer {
   background: #151821;
@@ -157,4 +209,5 @@ footer {
   padding: 20px;
   color: #999;
   font-size: 0.9rem;
+  border-top: 1px solid #1f2230;
 }
