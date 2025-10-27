@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LIDE Text Editor</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="lide.png" type="image/png">
+  <link rel="icon" href="lide.png" type="image/png" />
 </head>
 <body>
   <header class="navbar">
     <div class="logo">
-      <img src="lide.png" alt="LIDE Logo">
+      <img src="lide.png" alt="LIDE Logo" />
       <h1>LIDE <span class="version">v1.1</span></h1>
     </div>
     <nav>
@@ -21,6 +21,29 @@
     </nav>
   </header>
 
+  <!-- 🚀 LIDE 2.0 COMING SECTION -->
+  <section class="coming-soon">
+    <div class="coming-container">
+      <div class="coming-logo">
+        <img src="lide.png" alt="LIDE Logo">
+        <h2>LIDE <span class="highlight">v2.0</span> Coming Soon!</h2>
+      </div>
+      <p class="coming-desc">
+        Major update under development — packed with exciting new features and improvements!
+      </p>
+      <div class="features">
+        <!-- ✨ You can list features here later -->
+        <ul>
+          <li>Feature 1 – Modern UI with extra buttons</li>
+          <li>Feature 2 – Better Adaptibility with Better Start time</li>
+          <li>Feature 3 – Bug Fixes with file name collision removal </li>
+		  <li>Feature 4 - Chrome Installer Showing Malware (will be Resolved)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- HERO SECTION -->
   <section class="hero">
     <div class="hero-content">
       <h2>Fast. Simple. Developer-Focused.</h2>
@@ -32,6 +55,7 @@
     </div>
   </section>
 
+  <!-- ABOUT SECTION -->
   <section id="about" class="about">
     <h2>About LIDE</h2>
     <p>
@@ -46,6 +70,7 @@
     <p class="credit">Developed by <strong>Moinak Debnath</strong></p>
   </section>
 
+  <!-- HISTORY SECTION -->
   <section id="history" class="history">
     <h2>Previous Versions</h2>
     <div class="version-list">
@@ -64,8 +89,6 @@
     <p>© <span id="year"></span> LIDE Text Editor — Developed by <strong>Moinak Debnath</strong></p>
   </footer>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
