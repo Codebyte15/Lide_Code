@@ -11,7 +11,7 @@
   <header class="navbar">
     <div class="logo">
       <img src="lide.png" alt="LIDE Logo">
-      <h1>LIDE <span class="version">v1.0</span></h1>
+      <h1>LIDE <span class="version">v1.1</span></h1>
     </div>
     <nav>
       <ul>
@@ -23,11 +23,11 @@
 
   <section class="hero">
     <div class="hero-content">
-      <h2>Powerful. Lightweight. Free.</h2>
-      <p>LIDE is a fast and modern text editor designed for developers — clean, efficient, and open source.</p>
+      <h2>Fast. Simple. Developer-Focused.</h2>
+      <p>LIDE v1.1 refines performance, improves Python execution handling, and enhances overall stability.</p>
       <div class="buttons">
-        <a href="downloads/LIDE_v1.0_Setup.exe" class="btn primary">⬇ Download Installer</a>
-        <a href="downloads/LIDE_v1.0_Source.zip" class="btn secondary">📦 Download Source Code</a>
+        <a href="downloads/LIDE_v1.1_Setup.exe" class="btn primary">⬇ Download Installer</a>
+        <a href="downloads/LIDE_v1.1_Source.zip" class="btn secondary">📦 Download Source Code</a>
       </div>
     </div>
   </section>
@@ -35,22 +35,37 @@
   <section id="about" class="about">
     <h2>About LIDE</h2>
     <p>
-      LIDE is built for speed and simplicity.
-      Whether you're writing code, taking notes, or editing configuration files, LIDE provides a distraction-free workspace.
-      Designed by <strong>Moinak Debnath</strong>, version <strong>1.0</strong> marks the first public release.
+      LIDE is a lightweight and modern text editor built entirely in Python using Tkinter.  
+      It’s designed to be fast, simple, and reliable — perfect for developers who want a distraction-free workspace.
     </p>
     <ul>
-      <li>🧠 Fully Python Based Program</li>
-      <li>⚙️ Custom themes and extensions</li>
-      <li>🚀 Blazing-fast startup time</li>
+      <li>🐍 Fully Python-Based Program</li>
+      <li>🌗 Customizable Dark and Light Themes</li>
+      <li>🚀 Optimized for Speed and Stability</li>
     </ul>
+    <p class="credit">Developed by <strong>Moinak Debnath</strong></p>
+  </section>
+
+  <section id="history" class="history">
+    <h2>Previous Versions</h2>
+    <div class="version-list">
+      <div class="version-card">
+        <h3>LIDE v1.0</h3>
+        <p>The first public release featuring the base editor, dark mode, and preview window.</p>
+        <div class="buttons small">
+          <a href="downloads/LIDE_v1.0_Setup.exe" class="btn secondary">⬇ Installer</a>
+          <a href="downloads/LIDE_v1.0_Source.zip" class="btn secondary">📦 Source Code</a>
+        </div>
+      </div>
+    </div>
   </section>
 
   <footer>
     <p>© <span id="year"></span> LIDE Text Editor — Developed by <strong>Moinak Debnath</strong></p>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
-
