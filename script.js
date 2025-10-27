@@ -1,7 +1,7 @@
-// update year automatically
+// Update footer year automatically
 document.getElementById("year").textContent = new Date().getFullYear();
 
-// (Optional) Add smooth scrolling
+// Smooth scrolling for internal links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener("click", function(e) {
     const target = document.querySelector(this.getAttribute("href"));
