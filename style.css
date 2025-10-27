@@ -11,6 +11,7 @@ body {
   background: #0f111a;
   color: #f0f0f0;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 /* NAVBAR */
@@ -61,6 +62,62 @@ nav ul li a {
 
 nav ul li a:hover {
   color: #00aaff;
+}
+
+/* COMING SOON SECTION */
+.coming-soon {
+  background: linear-gradient(135deg, #1a1d29, #0f111a);
+  padding: 80px 10%;
+  text-align: center;
+  animation: fadeIn 1.5s ease;
+}
+
+.coming-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.coming-logo img {
+  height: 60px;
+  width: 60px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.coming-logo h2 {
+  font-size: 2.2rem;
+}
+
+.highlight {
+  color: #00aaff;
+  font-weight: 700;
+}
+
+.coming-desc {
+  color: #bbb;
+  margin-top: 10px;
+  font-size: 1.1rem;
+}
+
+.features {
+  margin-top: 30px;
+}
+
+.features ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.features li {
+  background: #1c2130;
+  padding: 12px 20px;
+  border-radius: 8px;
+  color: #00aaff;
+  width: fit-content;
 }
 
 /* HERO SECTION */
@@ -151,7 +208,7 @@ nav ul li a:hover {
   border-radius: 10px;
 }
 
-/* PREVIOUS VERSIONS */
+/* HISTORY */
 .history {
   padding: 60px 10%;
   background: #151821;
@@ -210,4 +267,15 @@ footer {
   color: #999;
   font-size: 0.9rem;
   border-top: 1px solid #1f2230;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
 }
