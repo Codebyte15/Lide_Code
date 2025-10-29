@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
 
+/* ========== GLOBAL ========== */
 * {
   margin: 0;
   padding: 0;
@@ -14,7 +15,7 @@ body {
   overflow-x: hidden;
 }
 
-/* NAVBAR */
+/* ========== NAVBAR ========== */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -34,12 +35,13 @@ body {
 }
 
 .logo img {
-  height: 40px;
-  width: 40px;
+  height: 42px;
+  width: 42px;
 }
 
 .logo h1 {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
+  font-weight: 600;
 }
 
 .version {
@@ -64,44 +66,30 @@ nav ul li a:hover {
   color: #00aaff;
 }
 
-/* COMING SOON SECTION */
-.coming-soon {
-  background: linear-gradient(135deg, #1a1d29, #0f111a);
-  padding: 80px 10%;
+/* ========== LATEST RELEASE (v2.0) ========== */
+.latest-release {
+  background: linear-gradient(135deg, #12141f, #1a1d29);
+  padding: 40px 8% 60px; /* ⬅ Reduced top padding */
   text-align: center;
-  animation: fadeIn 1.5s ease;
+  animation: fadeIn 1.2s ease;
+  margin-top: 10px; /* ⬅ Brought the section closer to the navbar */
 }
 
-.coming-logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
-}
-
-.coming-logo img {
-  height: 60px;
-  width: 60px;
-  animation: float 3s ease-in-out infinite;
-}
-
-.coming-logo h2 {
-  font-size: 2.2rem;
-}
-
-.highlight {
+.latest-release h2 {
+  font-size: 2.3rem;
   color: #00aaff;
-  font-weight: 700;
+  margin-bottom: 12px;
 }
 
-.coming-desc {
-  color: #bbb;
-  margin-top: 10px;
-  font-size: 1.1rem;
+.release-desc {
+  color: #bcbcbc;
+  font-size: 1.05rem;
+  max-width: 800px;
+  margin: 0 auto 22px;
 }
 
 .features {
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 .features ul {
@@ -114,43 +102,27 @@ nav ul li a:hover {
 
 .features li {
   background: #1c2130;
-  padding: 12px 20px;
-  border-radius: 8px;
   color: #00aaff;
+  padding: 10px 18px;
+  border-radius: 8px;
   width: fit-content;
+  transition: background 0.3s;
 }
 
-/* HERO SECTION */
-.hero {
-  height: 80vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  background: linear-gradient(135deg, #11131e, #1c2130);
-  padding: 40px;
-}
-
-.hero-content h2 {
-  font-size: 2.8rem;
-  margin-bottom: 10px;
-}
-
-.hero-content p {
-  color: #ccc;
-  font-size: 1.1rem;
-  max-width: 700px;
-  margin: 10px auto 30px;
+.features li:hover {
+  background: #222737;
 }
 
 .buttons {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 30px; /* ⬅ Reduced spacing before buttons */
 }
 
 .btn {
-  padding: 12px 25px;
+  padding: 11px 26px;
   border-radius: 8px;
   font-weight: 600;
   text-decoration: none;
@@ -160,6 +132,7 @@ nav ul li a:hover {
 .btn.primary {
   background: #00aaff;
   color: #fff;
+  box-shadow: 0 0 10px rgba(0,170,255,0.35);
 }
 
 .btn.secondary {
@@ -173,24 +146,23 @@ nav ul li a:hover {
   background: #0090dd;
   border-color: #0090dd;
 }
-
-/* ABOUT */
+/* ========== ABOUT ========== */
 .about {
-  padding: 80px 10%;
+  padding: 70px 10%;
   background: #0f111a;
+  text-align: center;
 }
 
 .about h2 {
   font-size: 2rem;
+  color: #00aaff;
   margin-bottom: 20px;
-  text-align: center;
 }
 
 .about p {
   max-width: 800px;
   margin: 0 auto 20px;
   color: #ccc;
-  text-align: center;
 }
 
 .about ul {
@@ -199,18 +171,20 @@ nav ul li a:hover {
   flex-wrap: wrap;
   justify-content: center;
   gap: 15px;
-  margin-top: 20px;
+  margin-top: 25px;
 }
 
 .about ul li {
   background: #1a1d29;
-  padding: 12px 20px;
+  padding: 12px 22px;
   border-radius: 10px;
+  color: #00aaff;
+  font-weight: 500;
 }
 
-/* HISTORY */
+/* ========== HISTORY ========== */
 .history {
-  padding: 60px 10%;
+  padding: 70px 10%;
   background: #151821;
 }
 
@@ -259,7 +233,7 @@ nav ul li a:hover {
   gap: 10px;
 }
 
-/* FOOTER */
+/* ========== FOOTER ========== */
 footer {
   background: #151821;
   text-align: center;
@@ -269,13 +243,53 @@ footer {
   border-top: 1px solid #1f2230;
 }
 
-/* ANIMATIONS */
+/* ========== ANIMATIONS ========== */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
+  from { opacity: 0; transform: translateY(25px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 15px 30px;
+  }
+  .latest-release {
+    padding: 50px 6%;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+  nav ul {
+    gap: 15px;
+  }
+  .latest-release {
+    padding: 40px 5%;
+  }
+  .features li {
+    font-size: 0.95rem;
+  }
+  .btn {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo h1 {
+    font-size: 1.3rem;
+  }
+  .latest-release h2 {
+    font-size: 1.8rem;
+  }
+  .release-desc {
+    font-size: 0.95rem;
+  }
+  .about h2, .history h2 {
+    font-size: 1.6rem;
+  }
 }
