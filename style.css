@@ -293,3 +293,75 @@ footer {
     font-size: 1.6rem;
   }
 }
+/* ====== Dual Release Cards (Stable + Pre-release) ====== */
+.release-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.release-card {
+  background: #1a1d29;
+  border-radius: 12px;
+  padding: 25px 30px;
+  width: 400px;
+  color: #f0f0f0;
+  text-align: left;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.release-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 170, 255, 0.25);
+}
+
+.release-card h3 {
+  color: #00aaff;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+.release-card ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #9fd6ff;
+  font-size: 0.95rem;
+}
+
+.release-card.pre {
+  background: linear-gradient(145deg, #18202e, #111521);
+  border: 1px solid #00aaff44;
+}
+
+.release-card.pre .pre-desc {
+  color: #bcbcbc;
+  margin-bottom: 15px;
+}
+
+.release-card.pre .contact {
+  color: #00aaff;
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+
+.release-card .buttons {
+  display: flex;
+  justify-content: flex-start;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+@media (max-width: 900px) {
+  .release-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .release-card {
+    width: 90%;
+  }
+}
