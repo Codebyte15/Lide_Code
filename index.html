@@ -8,6 +8,7 @@
   <link rel="icon" href="lide.png" type="image/png" />
 </head>
 <body>
+  <!-- NAVBAR -->
   <header class="navbar">
     <div class="logo">
       <img src="lide.png" alt="LIDE Logo" />
@@ -21,51 +22,56 @@
     </nav>
   </header>
 
-  <!-- 🚀 LIDE v2.0 SECTION -->
+  <!-- LATEST RELEASE -->
   <section id="download" class="latest-release">
     <h2>LIDE v2.0 (Lightweight Internal Development Editor)</h2>
-	<h2><span class="highlight">Coming Soon</span></h2>
     <p class="release-desc">
-      LIDE v2.0 is Coming! The most powerful and stable version yet — redesigned for speed, modern UI, and improved usability.
-      <center><span class="highlight" style="font-size:1.1rem;">COMING ON 20th NOVEMBER</span></center>
+      LIDE v2.0 is now officially released — rebuilt with a modern UI, improved performance,
+      cleaner file handling, better themes, and new development features.
     </p>
 
     <div class="release-container">
-      <!-- Stable v2.0 -->
+
+      <!-- Stable Release Card -->
       <div class="release-card stable">
         <h3>🌟 Stable Release (v2.0.0)</h3>
-        <ul>
-          <li>⚡ Completely revamped modern UI with new toolbar and controls</li>
-          <li>🚀 Very fast startup and smoother performance</li>
-          <li>🧩 Fixed file name collision and improved file management</li>
-          <li>🔒 Resolved Chrome malware installer false detection</li>
-          <li>🎨 Improved dark/light themes and adaptive layout</li>
-          <li>💾 Better memory management for large text files</li>
-		  <li>🖍️ Syntax Highlighting</li>
-          <li>📚 Project Creation Options</li>
-        </ul>
+        <!-- DOWNLOAD BUTTONS -->
+        <div class="download-buttons">
+          <a href="https://github.com/Codebyte15/Lide_Code/releases/download/v2.0.0/Lide_v2.0.0-setup.zip" class="btn download">⬇️ Download Installer For Windows</a>
+          <a href="https://github.com/Codebyte15/Lide_Code_Source" class="btn source">📦 Download Source Code</a>
+        </div>
       </div>
+
+    </div>
+  </section>
 
   <!-- ABOUT SECTION -->
   <section id="about" class="about">
     <h2>About LIDE</h2>
     <p>
-      LIDE is a lightweight and modern text editor built entirely in Python using Tkinter.  
-      It’s designed to be fast, simple, and reliable — perfect for developers who want a distraction-free workspace.
+      LIDE is a lightweight and modern text editor built entirely in Python using Tkinter.
+      Designed for developers who want a fast and distraction-free environment without the
+      complexity of big IDEs.
     </p>
     <ul>
       <li>🐍 Fully Python-Based Program</li>
-      <li>🌗 Customizable Dark and Light Themes</li>
+      <li>🌗 Customizable Dark & Light Themes</li>
       <li>🚀 Optimized for Speed and Stability</li>
+      <li>🖍️ Syntax Highlighting Included</li>
+      <li>📦 Project Folder Support</li>
     </ul>
     <p class="credit">Developed by <strong>Moinak Debnath</strong></p>
   </section>
 
+  <!-- FOOTER -->
   <footer>
     <p>© <span id="year"></span> LIDE Text Editor — Developed by <strong>Moinak Debnath</strong></p>
   </footer>
 
+  <script>
+    // Auto-year update
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
   <script src="script.js"></script>
 </body>
 </html>
-
