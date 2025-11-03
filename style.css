@@ -146,53 +146,50 @@ nav ul li a:hover {
   font-size: 0.95rem;
 }
 
-.release-card.pre {
-  background: linear-gradient(145deg, #18202e, #111521);
-  border: 1px solid #00aaff44;
-}
-
-.release-card.pre .pre-desc {
-  color: #bcbcbc;
-  margin-bottom: 15px;
-}
-
-.release-card.pre .contact {
-  color: #00aaff;
-  font-size: 0.95rem;
-  margin-bottom: 20px;
-}
-
-.release-card .buttons {
+/* ===== Download Buttons ===== */
+.download-buttons {
   display: flex;
-  justify-content: flex-start;
-  gap: 12px;
-  margin-top: 10px;
+  gap: 15px;
+  margin-top: 22px;
+  flex-wrap: wrap;
 }
 
 .btn {
-  padding: 11px 26px;
-  border-radius: 8px;
+  padding: 12px 28px;
+  border-radius: 10px;
   font-weight: 600;
   text-decoration: none;
-  transition: background 0.3s, transform 0.2s;
+  font-size: 0.95rem;
+  transition: all 0.25s ease;
+  display: inline-block;
+  cursor: pointer;
 }
 
-.btn.primary {
+/* Installer Button (Primary) */
+.btn.download {
   background: #00aaff;
   color: #fff;
-  box-shadow: 0 0 10px rgba(0,170,255,0.35);
+  box-shadow: 0 0 12px rgba(0,170,255,0.4);
 }
 
-.btn.secondary {
+.btn.download:hover {
+  background: #0090dd;
+  box-shadow: 0 0 16px rgba(0,170,255,0.6);
+  transform: translateY(-3px);
+}
+
+/* Source Code Button (Outlined) */
+.btn.source {
   background: transparent;
   color: #00aaff;
   border: 2px solid #00aaff;
 }
 
-.btn:hover {
-  transform: translateY(-2px);
-  background: #0090dd;
+.btn.source:hover {
+  background: rgba(0,170,255,0.1);
   border-color: #0090dd;
+  color: #66d4ff;
+  transform: translateY(-3px);
 }
 
 /* ========== ABOUT ========== */
@@ -271,6 +268,9 @@ footer {
   .btn {
     width: 100%;
     max-width: 280px;
+  }
+  .download-buttons {
+    justify-content: center;
   }
 }
 
