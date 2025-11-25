@@ -86,16 +86,16 @@ SourceForge: https://sourceforge.net/projects/lide-editor/
 
 ------------------------------------------------------------
 
-🧩 Plugin Development
-----------------------
+## 🧩 Plugin Development
 LIDE supports Python-based plugins.
 
-How to create a plugin:
-Visit :- https://github.com/Codebyte15/Lide_Plugins
-------------------------------------------------------------
+How to create a plugin:  
+🔗 https://github.com/Codebyte15/Lide_Plugins
 
-**💻📄 Plugin Development**  
-Visit :- https://github.com/Codebyte15/Lide_Code_Source
+---
+
+# 💻📄 **Source Code**
+🔗 https://github.com/Codebyte15/Lide_Code_Source
 
 🔮 Upcoming Updates
 -------------------
