@@ -94,7 +94,7 @@ How to create a plugin:
 Visit :- https://github.com/Codebyte15/Lide_Plugins
 ------------------------------------------------------------
 
-💻📄 Source Code
+**💻📄 Plugin Development**  
 Visit :- https://github.com/Codebyte15/Lide_Code_Source
 
 🔮 Upcoming Updates
