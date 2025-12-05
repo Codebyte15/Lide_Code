@@ -113,6 +113,7 @@ v2.2.0:
 - Added Plugin System
 - Improved Code Format
 - Faster Startup
+- Automatic features in Python Extension plugin
 
 ------------------------------------------------------------
 
