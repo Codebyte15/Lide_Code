@@ -1,62 +1,96 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LIDE Editor v2.2.0</title>
+<title>LIDE Editor v2.2.0 — Python Code Editor</title>
 <link rel="icon" href="lide.png" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 /* ===== Global ===== */
-body {margin:0; padding:0; font-family:'Segoe UI', Tahoma, sans-serif; background:#f5f5f5; color:#222;}
+* {margin:0; padding:0; box-sizing:border-box;}
+body {font-family:'Inter', sans-serif; background:#f0f2f7; color:#222; line-height:1.5;}
 a {color:#007acc; text-decoration:none;}
 a:hover {text-decoration:underline;}
 
 /* Navbar */
-.navbar {display:flex; justify-content:space-between; align-items:center; padding:16px 40px; background:#007acc; color:#fff;}
-.navbar h1 {font-size:1.8rem;}
+.navbar {display:flex; justify-content:space-between; align-items:center; padding:12px 40px; background:linear-gradient(90deg,#007acc,#00c6ff); color:#fff; box-shadow:0 4px 12px rgba(0,0,0,0.1);}
+.navbar h1 {font-size:1.6rem; font-weight:700;}
 
 /* Hero Section */
-.hero {text-align:center; padding:80px 10%; background:#e6f0fa;}
-.hero h2 {font-size:2.5rem; margin-bottom:10px;}
-.hero p {margin-bottom:30px; font-size:1.2rem; color:#555;}
-.hero-buttons {display:flex; gap:16px; justify-content:center; flex-wrap:wrap;}
-.hbtn {display:flex; align-items:center; justify-content:center; gap:8px; padding:14px 28px; border-radius:6px; font-weight:500; text-decoration:none; background:#007acc; color:#fff;}
-.hbtn:hover {opacity:0.85;}
+.hero {display:flex; flex-direction:column; align-items:center; text-align:center; padding:60px 10%; background:linear-gradient(180deg,#e0f0ff,#ffffff);}
+.hero img {width:120px; margin-bottom:15px;}
+.hero h2 {font-size:2rem; margin-bottom:15px; color:#007acc;}
+.hero p {font-size:1rem; margin-bottom:25px; color:#555; max-width:600px;}
+.hero-buttons {display:flex; gap:15px; flex-wrap:wrap;}
+.hbtn {display:flex; align-items:center; justify-content:center; gap:8px; padding:10px 20px; border-radius:8px; font-weight:600; text-decoration:none; background:#007acc; color:#fff; font-size:0.95rem; transition:all 0.3s ease;}
+.hbtn:hover {transform:translateY(-2px); box-shadow:0 5px 15px rgba(0,0,0,0.1);}
 .hbtn.ghost {background:#fff; border:2px solid #007acc; color:#007acc;}
-.hbtn img {width:20px; height:20px;}
 
 /* Sections */
-.section {padding:60px 10%; margin-bottom:40px; background:#fff; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.08);}
-.section h3 {margin-bottom:20px; color:#007acc;}
-.section ul {margin-left:20px; list-style:disc; color:#333;}
+.section {padding:40px 10%; margin:20px auto; background:#fff; border-radius:16px; box-shadow:0 8px 20px rgba(0,0,0,0.06); max-width:1000px;}
+.section h3 {margin-bottom:20px; color:#007acc; font-size:1.5rem;}
+.section ul {margin-left:20px; list-style:disc; color:#333; font-size:1rem;}
+.section img,
+.tab-content img {
+  width: 100%;
+  max-width: 700px; /* Keeps image from being too large */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-top: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-/* Screenshot */
-.screenshot {width:100%; max-width:900px; border-radius:8px; border:1px solid #ccc; margin-top:20px;}
+/* Documentation Tabs */
+.documentation {max-width:1000px; margin:40px auto; background:#f9f9f9; border-radius:16px; box-shadow:0 8px 20px rgba(0,0,0,0.06);}
+.tab-header {display:flex; border-bottom:2px solid #e0e0e0; border-radius:16px 16px 0 0; overflow-x:auto;}
+.tab-header button {flex:1; padding:10px 16px; cursor:pointer; background:transparent; border:none; font-size:1rem; transition:0.3s; color:#555; font-weight:500;}
+.tab-header button.active {border-bottom:3px solid #007acc; font-weight:600; color:#007acc;}
+.tab-header button:hover {background:#f0f0f0;}
+.tab-content {padding:25px 20px; min-height:200px; color:#333; font-size:1rem;}
+
+/* Upcoming Features */
+.upcoming {background:linear-gradient(90deg,#007acc,#00c6ff); color:#fff; padding:50px 10%; border-radius:16px; max-width:1000px; margin:40px auto; text-align:center;}
+.upcoming h3 {margin-bottom:20px; font-size:1.7rem;}
+.upcoming ul {list-style:none; padding:0; display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:15px;}
+.upcoming li {background:rgba(255,255,255,0.15); padding:15px; border-radius:12px; font-size:1rem; transition:0.3s; font-weight:500;}
+.upcoming li:hover {background:rgba(255,255,255,0.25); transform:translateY(-3px);}
 
 /* Footer */
-footer {text-align:center; padding:24px; background:#f0f0f0; color:#555; border-top:1px solid #ccc;}
+footer {text-align:center; padding:20px; background:#f0f0f0; color:#555; border-top:1px solid #ccc; margin-top:40px; font-size:0.9rem;}
 </style>
 </head>
 <body>
 
+<!-- Navbar -->
 <header class="navbar">
 <h1>LIDE Editor v2.2.0</h1>
 </header>
 
-<main>
+<!-- Hero Section -->
 <section class="hero">
-<img src="lide.png" alt="LIDE Logo" style="width:150px; margin-bottom:20px;">
-<h2>LIDE — Lightweight & Beginner-Friendly Code Editor</h2>
-<p>Fast, simple, and designed for beginners and low-end PCs. Focus on essential coding tools without clutter.</p>
+<img src="lide.png" alt="LIDE Logo">
+<h2>LIDE — Lightweight Python Code Editor</h2>
+<p>Designed for beginners and indie developers. Super fast, lightweight, with essential tools and a plugin system built with Python & CustomTkinter.</p>
 <div class="hero-buttons">
 <a href="https://github.com/Codebyte15/Lide_Code/releases/download/v2.2.0_stable/LIDE_v2.2.0_stable-setup.zip" class="hbtn">⬇️ Download Installer</a>
 <a href="https://github.com/Codebyte15/Lide_Code_Source" class="hbtn ghost">📦 Source Code</a>
 </div>
 </section>
 
-<section class="section">
-<h3>✨ Features</h3>
+<!-- Documentation Section with Tabs -->
+<section class="documentation">
+<div class="tab-header">
+<button class="tab-link active" onclick="openTab(event,'features')">✨ Features</button>
+<button class="tab-link" onclick="openTab(event,'screenshot')">📸 Screenshot</button>
+<button class="tab-link" onclick="openTab(event,'links')">🔗 Links</button>
+<button class="tab-link" onclick="openTab(event,'why')">💡 Why LIDE?</button>
+</div>
+
+<div id="features" class="tab-content">
 <ul>
 <li>Fully Python-based & compiled with Nuitka</li>
 <li>Open Source (MIT License)</li>
@@ -66,40 +100,57 @@ footer {text-align:center; padding:24px; background:#f0f0f0; color:#555; border-
 <li>Built-in Text/File to Hex Generator</li>
 <li>Lightweight & beginner-friendly interface</li>
 </ul>
-</section>
+</div>
 
-<section class="section">
-<h3>📸 Screenshot</h3>
-<img src="https://github.com/user-attachments/assets/436ca579-c515-4c52-8d09-4e213fc418c2" alt="LIDE Screenshot" class="screenshot">
-</section>
+<div id="screenshot" class="tab-content" style="display:none;">
+<img src="https://github.com/user-attachments/assets/436ca579-c515-4c52-8d09-4e213fc418c2" alt="LIDE Screenshot">
+</div>
 
-<section class="section">
-<h3>🔗 Links</h3>
+<div id="links" class="tab-content" style="display:none;">
 <ul>
 <li>Netlify: <a href="https://lide15.netlify.app">https://lide15.netlify.app</a></li>
 <li>GitHub Pages: <a href="https://codebyte15.github.io/Lide_Code">https://codebyte15.github.io/Lide_Code</a></li>
 <li>SourceForge: <a href="https://sourceforge.net/projects/lide-editor/">https://sourceforge.net/projects/lide-editor/</a></li>
 </ul>
-</section>
+</div>
 
-<section class="section">
-<h3>💡 Why LIDE?</h3>
+<div id="why" class="tab-content" style="display:none;">
 <ul>
 <li>Fast startup with minimal RAM usage</li>
 <li>Perfect for students and beginners</li>
 <li>Essential tools without clutter</li>
 <li>Friendly interface for low-end PCs</li>
 </ul>
+</div>
 </section>
-</main>
 
-<footer>© <span id="year"></span> LIDE Editor — Beginner-Friendly</footer>
+<!-- Upcoming Features -->
+<section class="upcoming">
+<h3>🚀 Upcoming Features</h3>
+<ul>
+<li>Chunk Syntax Highlighter</li>
+<li>Bug Fixes with Responsive UI</li>
+<li>Multifile Management in a single session</li>
+<li>Update System Improvement</li>
+</ul>
+</section>
+
+<!-- Footer -->
+<footer>© <span id="year"></span> LIDE Editor — Indie Python Code Editor</footer>
 
 <script>
 document.getElementById("year").textContent = new Date().getFullYear();
+
+function openTab(evt, tabName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tab-content");
+  for (i = 0; i < tabcontent.length; i++) { tabcontent[i].style.display = "none"; }
+  tablinks = document.getElementsByClassName("tab-link");
+  for (i = 0; i < tablinks.length; i++) { tablinks[i].className = tablinks[i].className.replace(" active", ""); }
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
 </script>
 
 </body>
 </html>
-
-
