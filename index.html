@@ -90,6 +90,50 @@ footer {text-align:center; padding:20px; background:#f0f0f0; color:#555; border-
 <button class="tab-link" onclick="openTab(event,'why')">💡 Why LIDE?</button>
 </div>
 
+<!-- License Section -->
+<section class="section" id="license">
+  <h3 style="display:flex; justify-content:space-between; align-items:center; cursor:pointer;"
+      onclick="toggleLicense()">
+    📄 License
+    <span id="licenseToggle">▼</span>
+  </h3>
+
+  <div id="licenseContent" style="display:none;">
+    <p style="margin-bottom:10px;">
+      This project is licensed under the MIT License.
+      <a href="https://github.com/Codebyte15/Lide_Code_Source/blob/main/LICENSE" target="_blank">
+        View on GitHub
+      </a>
+    </p>
+
+    <pre style="white-space: pre-wrap; font-family: inherit; font-size: 0.95rem; color: #333;">
+
+MIT License
+
+Copyright (c) 2025 Moinak Debnath
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+    </pre>
+  </div>
+</section>
+
 <div id="features" class="tab-content">
 <ul>
 <li>Fully Python-based & compiled with Nuitka</li>
@@ -139,17 +183,40 @@ footer {text-align:center; padding:20px; background:#f0f0f0; color:#555; border-
 <footer>© <span id="year"></span> LIDE Editor — Indie Python Code Editor</footer>
 
 <script>
-document.getElementById("year").textContent = new Date().getFullYear();
+  // Auto update footer year
+  document.getElementById("year").textContent = new Date().getFullYear();
 
-function openTab(evt, tabName) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tab-content");
-  for (i = 0; i < tabcontent.length; i++) { tabcontent[i].style.display = "none"; }
-  tablinks = document.getElementsByClassName("tab-link");
-  for (i = 0; i < tablinks.length; i++) { tablinks[i].className = tablinks[i].className.replace(" active", ""); }
-  document.getElementById(tabName).style.display = "block";
-  evt.currentTarget.className += " active";
-}
+  // Toggle License Section
+  function toggleLicense() {
+    const content = document.getElementById("licenseContent");
+    const toggle = document.getElementById("licenseToggle");
+
+    if (!content || !toggle) return;
+
+    const isHidden = content.style.display === "none" || content.style.display === "";
+
+    content.style.display = isHidden ? "block" : "none";
+    toggle.textContent = isHidden ? "▲" : "▼";
+  }
+
+  // Documentation Tabs
+  function openTab(evt, tabName) {
+    const tabcontent = document.getElementsByClassName("tab-content");
+    const tablinks = document.getElementsByClassName("tab-link");
+
+    for (let i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+
+    for (let i = 0; i < tablinks.length; i++) {
+      tablinks[i].classList.remove("active");
+    }
+
+    const activeTab = document.getElementById(tabName);
+    if (activeTab) activeTab.style.display = "block";
+
+    evt.currentTarget.classList.add("active");
+  }
 </script>
 
 </body>
