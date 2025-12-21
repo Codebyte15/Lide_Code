@@ -3,220 +3,150 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LIDE Editor v2.2.0 — Python Code Editor</title>
+<title>LIDE Editor — Under Development</title>
+
 <link rel="icon" href="lide.png" type="image/png">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
 <style>
-/* ===== Global ===== */
-* {margin:0; padding:0; box-sizing:border-box;}
-body {font-family:'Inter', sans-serif; background:#f0f2f7; color:#222; line-height:1.5;}
-a {color:#007acc; text-decoration:none;}
-a:hover {text-decoration:underline;}
-
-/* Navbar */
-.navbar {display:flex; justify-content:space-between; align-items:center; padding:12px 40px; background:linear-gradient(90deg,#007acc,#00c6ff); color:#fff; box-shadow:0 4px 12px rgba(0,0,0,0.1);}
-.navbar h1 {font-size:1.6rem; font-weight:700;}
-
-/* Hero Section */
-.hero {display:flex; flex-direction:column; align-items:center; text-align:center; padding:60px 10%; background:linear-gradient(180deg,#e0f0ff,#ffffff);}
-.hero img {width:120px; margin-bottom:15px;}
-.hero h2 {font-size:2rem; margin-bottom:15px; color:#007acc;}
-.hero p {font-size:1rem; margin-bottom:25px; color:#555; max-width:600px;}
-.hero-buttons {display:flex; gap:15px; flex-wrap:wrap;}
-.hbtn {display:flex; align-items:center; justify-content:center; gap:8px; padding:10px 20px; border-radius:8px; font-weight:600; text-decoration:none; background:#007acc; color:#fff; font-size:0.95rem; transition:all 0.3s ease;}
-.hbtn:hover {transform:translateY(-2px); box-shadow:0 5px 15px rgba(0,0,0,0.1);}
-.hbtn.ghost {background:#fff; border:2px solid #007acc; color:#007acc;}
-
-/* Sections */
-.section {padding:40px 10%; margin:20px auto; background:#fff; border-radius:16px; box-shadow:0 8px 20px rgba(0,0,0,0.06); max-width:1000px;}
-.section h3 {margin-bottom:20px; color:#007acc; font-size:1.5rem;}
-.section ul {margin-left:20px; list-style:disc; color:#333; font-size:1rem;}
-.section img,
-.tab-content img {
-  width: 100%;
-  max-width: 700px; /* Keeps image from being too large */
-  height: auto; /* Maintain aspect ratio */
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  margin-top: 20px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Documentation Tabs */
-.documentation {max-width:1000px; margin:40px auto; background:#f9f9f9; border-radius:16px; box-shadow:0 8px 20px rgba(0,0,0,0.06);}
-.tab-header {display:flex; border-bottom:2px solid #e0e0e0; border-radius:16px 16px 0 0; overflow-x:auto;}
-.tab-header button {flex:1; padding:10px 16px; cursor:pointer; background:transparent; border:none; font-size:1rem; transition:0.3s; color:#555; font-weight:500;}
-.tab-header button.active {border-bottom:3px solid #007acc; font-weight:600; color:#007acc;}
-.tab-header button:hover {background:#f0f0f0;}
-.tab-content {padding:25px 20px; min-height:200px; color:#333; font-size:1rem;}
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(180deg, #e0f0ff, #ffffff);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #222;
+}
 
-/* Upcoming Features */
-.upcoming {background:linear-gradient(90deg,#007acc,#00c6ff); color:#fff; padding:50px 10%; border-radius:16px; max-width:1000px; margin:40px auto; text-align:center;}
-.upcoming h3 {margin-bottom:20px; font-size:1.7rem;}
-.upcoming ul {list-style:none; padding:0; display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:15px;}
-.upcoming li {background:rgba(255,255,255,0.15); padding:15px; border-radius:12px; font-size:1rem; transition:0.3s; font-weight:500;}
-.upcoming li:hover {background:rgba(255,255,255,0.25); transform:translateY(-3px);}
+.container {
+  text-align: center;
+  background: #ffffff;
+  padding: 50px 40px;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  max-width: 520px;
+  width: 90%;
+}
 
-/* Footer */
-footer {text-align:center; padding:20px; background:#f0f0f0; color:#555; border-top:1px solid #ccc; margin-top:40px; font-size:0.9rem;}
+.container img {
+  width: 110px;
+  margin-bottom: 20px;
+}
+
+.container h1 {
+  font-size: 2rem;
+  color: #007acc;
+  margin-bottom: 15px;
+}
+
+.container p {
+  font-size: 1.05rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Countdown */
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.time-box {
+  background: #f0f6ff;
+  padding: 14px 16px;
+  border-radius: 12px;
+  min-width: 80px;
+}
+
+.time-box h2 {
+  font-size: 1.6rem;
+  color: #007acc;
+}
+
+.time-box span {
+  font-size: 0.75rem;
+  color: #555;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.launch-text {
+  margin-top: 20px;
+  font-weight: 600;
+  color: #007acc;
+  font-size: 1.1rem;
+}
 </style>
 </head>
+
 <body>
 
-<!-- Navbar -->
-<header class="navbar">
-<h1>LIDE Editor v2.2.0</h1>
-</header>
+<div class="container">
+  <img src="lide.png" alt="LIDE Logo">
 
-<!-- Hero Section -->
-<section class="hero">
-<img src="lide.png" alt="LIDE Logo">
-<h2>LIDE — Lightweight Python Code Editor</h2>
-<p>Designed for beginners and indie developers. Super fast, lightweight, with essential tools and a plugin system built with Python & CustomTkinter.</p>
-<div class="hero-buttons">
-<a href="https://github.com/Codebyte15/Lide_Code/releases/download/v2.2.0_stable/LIDE_v2.2.0_stable-setup.zip" class="hbtn">⬇️ Download Installer</a>
-<a href="https://github.com/Codebyte15/Lide_Code_Source" class="hbtn ghost">📦 Source Code</a>
-</div>
-</section>
+  <h1>LIDE Editor v3.0.0</h1>
 
-<!-- Documentation Section with Tabs -->
-<section class="documentation">
-<div class="tab-header">
-<button class="tab-link active" onclick="openTab(event,'features')">✨ Features</button>
-<button class="tab-link" onclick="openTab(event,'screenshot')">📸 Screenshot</button>
-<button class="tab-link" onclick="openTab(event,'links')">🔗 Links</button>
-<button class="tab-link" onclick="openTab(event,'why')">💡 Why LIDE?</button>
-</div>
+  <p>
+    LIDE version <strong>3.0.0</strong> is currently under active development.
+  </p>
 
-<!-- License Section -->
-<section class="section" id="license">
-  <h3 style="display:flex; justify-content:space-between; align-items:center; cursor:pointer;"
-      onclick="toggleLicense()">
-    📄 License
-    <span id="licenseToggle">▼</span>
-  </h3>
-
-  <div id="licenseContent" style="display:none;">
-    <p style="margin-bottom:10px;">
-      This project is licensed under the MIT License.
-      <a href="https://github.com/Codebyte15/Lide_Code_Source/blob/main/LICENSE" target="_blank">
-        View on GitHub
-      </a>
-    </p>
-
-    <pre style="white-space: pre-wrap; font-family: inherit; font-size: 0.95rem; color: #333;">
-
-MIT License
-
-Copyright (c) 2025 Moinak Debnath
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-
-    </pre>
+  <div class="countdown" id="countdown">
+    <div class="time-box">
+      <h2 id="days">--</h2>
+      <span>Days</span>
+    </div>
+    <div class="time-box">
+      <h2 id="hours">--</h2>
+      <span>Hours</span>
+    </div>
+    <div class="time-box">
+      <h2 id="minutes">--</h2>
+      <span>Minutes</span>
+    </div>
+    <div class="time-box">
+      <h2 id="seconds">--</h2>
+      <span>Seconds</span>
+    </div>
   </div>
-</section>
 
-<div id="features" class="tab-content">
-<ul>
-<li>Fully Python-based & compiled with Nuitka</li>
-<li>Open Source (MIT License)</li>
-<li>Plugin System</li>
-<li>Syntax Highlighting</li>
-<li>Super Fast Startup</li>
-<li>Built-in Text/File to Hex Generator</li>
-<li>Lightweight & beginner-friendly interface</li>
-</ul>
+  <div class="launch-text" id="launchText">
+    🚀 Launching on 1st February
+  </div>
 </div>
-
-<div id="screenshot" class="tab-content" style="display:none;">
-<img src="https://github.com/user-attachments/assets/436ca579-c515-4c52-8d09-4e213fc418c2" alt="LIDE Screenshot">
-</div>
-
-<div id="links" class="tab-content" style="display:none;">
-<ul>
-<li>Netlify: <a href="https://lide15.netlify.app">https://lide15.netlify.app</a></li>
-<li>GitHub Pages: <a href="https://codebyte15.github.io/Lide_Code">https://codebyte15.github.io/Lide_Code</a></li>
-<li>SourceForge: <a href="https://sourceforge.net/projects/lide-editor/">https://sourceforge.net/projects/lide-editor/</a></li>
-</ul>
-</div>
-
-<div id="why" class="tab-content" style="display:none;">
-<ul>
-<li>Fast startup with minimal RAM usage</li>
-<li>Perfect for students and beginners</li>
-<li>Essential tools without clutter</li>
-<li>Friendly interface for low-end PCs</li>
-</ul>
-</div>
-</section>
-
-<!-- Upcoming Features -->
-<section class="upcoming">
-<h3>🚀 Upcoming Features</h3>
-<ul>
-<li>Chunk Syntax Highlighter</li>
-<li>Bug Fixes with Responsive UI</li>
-<li>Multifile Management in a single session</li>
-<li>Update System Improvement</li>
-</ul>
-</section>
-
-<!-- Footer -->
-<footer>© <span id="year"></span> LIDE Editor — Indie Python Code Editor</footer>
 
 <script>
-  // Auto update footer year
-  document.getElementById("year").textContent = new Date().getFullYear();
+const launchDate = new Date("February 1, 2026 00:00:00").getTime();
 
-  // Toggle License Section
-  function toggleLicense() {
-    const content = document.getElementById("licenseContent");
-    const toggle = document.getElementById("licenseToggle");
+const timer = setInterval(() => {
+  const now = new Date().getTime();
+  const diff = launchDate - now;
 
-    if (!content || !toggle) return;
-
-    const isHidden = content.style.display === "none" || content.style.display === "";
-
-    content.style.display = isHidden ? "block" : "none";
-    toggle.textContent = isHidden ? "▲" : "▼";
+  if (diff <= 0) {
+    clearInterval(timer);
+    document.getElementById("countdown").style.display = "none";
+    document.getElementById("launchText").innerHTML = "🎉 LIDE v3.0.0 has launched!";
+    return;
   }
 
-  // Documentation Tabs
-  function openTab(evt, tabName) {
-    const tabcontent = document.getElementsByClassName("tab-content");
-    const tablinks = document.getElementsByClassName("tab-link");
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-    for (let i = 0; i < tabcontent.length; i++) {
-      tabcontent[i].style.display = "none";
-    }
-
-    for (let i = 0; i < tablinks.length; i++) {
-      tablinks[i].classList.remove("active");
-    }
-
-    const activeTab = document.getElementById(tabName);
-    if (activeTab) activeTab.style.display = "block";
-
-    evt.currentTarget.classList.add("active");
-  }
+  document.getElementById("days").textContent = days;
+  document.getElementById("hours").textContent = hours;
+  document.getElementById("minutes").textContent = minutes;
+  document.getElementById("seconds").textContent = seconds;
+}, 1000);
 </script>
 
 </body>
