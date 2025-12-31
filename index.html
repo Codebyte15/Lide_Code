@@ -3,149 +3,326 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LIDE Editor — Under Development</title>
+<title>LIDE Editor v3.0.0 – Pre-Release</title>
 
 <link rel="icon" href="lide.png" type="image/png">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
   font-family: 'Inter', sans-serif;
-  background: linear-gradient(180deg, #e0f0ff, #ffffff);
-  height: 100vh;
+  background: #f5f7fa;
+  color: #2d3748;
+}
+
+/* Container */
+.fullscreen-container {
+  width: 100%;
+  min-height: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  color: #222;
+  padding: 40px 20px;
 }
 
-.container {
+/* Header */
+.header {
   text-align: center;
-  background: #ffffff;
-  padding: 50px 40px;
-  border-radius: 18px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-  max-width: 520px;
-  width: 90%;
+  margin-bottom: 30px;
 }
 
-.container img {
+.header img {
   width: 110px;
-  margin-bottom: 20px;
-}
-
-.container h1 {
-  font-size: 2rem;
-  color: #007acc;
   margin-bottom: 15px;
 }
 
-.container p {
+.header h1 {
+  font-size: 2.2rem;
+  color: #2563eb;
+}
+
+.header p {
+  margin-top: 8px;
+  color: #4a5568;
   font-size: 1.05rem;
-  color: #555;
-  line-height: 1.6;
 }
 
 /* Countdown */
 .countdown {
+  margin-top: 18px;
+  padding: 14px 22px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  font-weight: 600;
+  color: #1e40af;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+}
+
+/* Warning box */
+.warning-box {
+  max-width: 900px;
+  width: 100%;
+  margin: 25px 0 35px;
+  padding: 18px 22px;
+  background: #fff7ed;
+  border-left: 5px solid #f59e0b;
+  border-radius: 8px;
+  color: #92400e;
+}
+
+.warning-box strong {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 1rem;
+}
+
+/* Buttons */
+.download-area {
   display: flex;
+  gap: 18px;
+  margin-top: 22px;
   justify-content: center;
-  gap: 15px;
-  margin-top: 25px;
 }
 
-.time-box {
-  background: #f0f6ff;
-  padding: 14px 16px;
-  border-radius: 12px;
-  min-width: 80px;
-}
-
-.time-box h2 {
-  font-size: 1.6rem;
-  color: #007acc;
-}
-
-.time-box span {
-  font-size: 0.75rem;
-  color: #555;
+.download-btn {
+  padding: 14px 30px;
+  font-size: 0.95rem;
   font-weight: 600;
-  text-transform: uppercase;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #fff;
+  background: #2563eb;
+  transition: 0.25s ease;
 }
 
-.launch-text {
-  margin-top: 20px;
+.download-btn:hover {
+  background: #1e40af;
+}
+
+.source-btn {
+  background: #94a3b8;
+}
+
+.source-btn:hover {
+  background: #64748b;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.tab {
+  padding: 12px 20px;
+  cursor: pointer;
   font-weight: 600;
-  color: #007acc;
-  font-size: 1.1rem;
+  color: #475569;
+  border-radius: 6px 6px 0 0;
+}
+
+.tab.active {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-bottom: none;
+  color: #2563eb;
+}
+
+/* Content */
+.tab-content {
+  display: none;
+  max-width: 900px;
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  padding: 30px;
+  border-radius: 0 0 10px 10px;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.tab-content h2 {
+  color: #2563eb;
+  margin-bottom: 15px;
+}
+
+.tab-content ul {
+  margin-left: 20px;
+}
+
+.tab-content li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+/* Screenshot Image Styling */
+#screenshots img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  max-height: 600px; /* adjust to desired frame height */
+  border-radius: 8px;
+  margin-top: 15px;
+  object-fit: contain;
+}
+
+/* Links */
+.connect-link {
+  font-weight: 600;
+  color: #2563eb;
+  text-decoration: none;
+  margin-right: 18px;
+}
+
+.connect-link:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .download-area {
+    flex-direction: column;
+  }
 }
 </style>
 </head>
 
 <body>
+<div class="fullscreen-container">
 
-<div class="container">
-  <img src="lide.png" alt="LIDE Logo">
+  <div class="header">
+    <img src="lide.png" alt="LIDE Logo">
+    <h1>LIDE Editor v3.0.0 – Pre-Release</h1>
+    <p>Early access build before stable launch</p>
 
-  <h1>LIDE Editor v3.0.0</h1>
-
-  <p>
-    LIDE version <strong>3.0.0</strong> is currently under active development.
-  </p>
-
-  <div class="countdown" id="countdown">
-    <div class="time-box">
-      <h2 id="days">--</h2>
-      <span>Days</span>
+    <div class="countdown" id="countdown">
+      Stable release launching on 1 February
     </div>
-    <div class="time-box">
-      <h2 id="hours">--</h2>
-      <span>Hours</span>
-    </div>
-    <div class="time-box">
-      <h2 id="minutes">--</h2>
-      <span>Minutes</span>
-    </div>
-    <div class="time-box">
-      <h2 id="seconds">--</h2>
-      <span>Seconds</span>
+
+    <div class="download-area">
+      <a href="https://github.com/Codebyte15/Lide_Code/releases/download/v3.0.0_pre_release/LIDE_v3.0.0_pre_release-setup.zip" class="download-btn">Download Pre-Release</a>
+      <a href="https://github.com/Codebyte15/Lide_Code_Source" class="download-btn source-btn">Source Code</a>
     </div>
   </div>
 
-  <div class="launch-text" id="launchText">
-    🚀 Launching on 1st February
+  <div class="warning-box">
+    <strong>⚠ Pre-Release Notice</strong>
+    This version may contain bugs, unfinished features, or critical errors.  
+    If you face any issues, please DM on Instagram  
+    <strong>@astro_moinak</strong>
   </div>
+
+  <div class="tabs">
+    <div class="tab active" data-tab="docs">Docs</div>
+    <div class="tab" data-tab="license">License</div>
+    <div class="tab" data-tab="connect">Connect</div>
+    <div class="tab" data-tab="screenshots">Screenshots</div>
+  </div>
+
+  <!-- Docs (UNCHANGED FEATURES) -->
+  <div class="tab-content active" id="docs">
+    <h2>LIDE v3.0.0 Stable Features</h2>
+    <ul>
+      <li><strong>Chunk Syntax Highlighter:</strong> Highlight code efficiently in chunks.</li>
+      <li><strong>In-Built Terminal:</strong> Integrated terminal (Ctrl + ,) for faster workflows.</li>
+      <li><strong>Bug Fixes & Responsive UI:</strong> Improved stability and interface responsiveness.</li>
+      <li><strong>Multifile Management:</strong> Work with multiple files in a single session.</li>
+      <li><strong>Update System Improvement:</strong> Smoother and more reliable updates.</li>
+      <li><strong>Select and Replace Keywords:</strong> Quickly find and replace text.</li>
+      <li><strong>Enhanced Widget Control:</strong> Customize editor behavior via Settings &gt; Preferences.</li>
+      <li><strong>Cache and Saved File Management:</strong> Delete unnecessary files safely.</li>
+      <li><strong>Static HTML Data Fetch:</strong> Import and read data from static websites.</li>
+      <li><strong>Better File Management:</strong> Organize your projects efficiently.</li>
+    </ul>
+  </div>
+
+  <div class="tab-content" id="license">
+    <h2>MIT License</h2>
+    <p>Copyright (c) [2025] [Moinak Debnath]</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy</p>
+<p>of this software and associated documentation files (the "Software"), to deal</p>
+<p>in the Software without restriction, including without limitation the rights</p>
+<p>to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</p>
+<p>copies of the Software, and to permit persons to whom the Software is</p>
+<p>furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in all</p>
+<p>copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</p>
+<p>IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</p>
+<p>FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</p>
+<p>AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</p>
+<p>LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</p>
+<p>OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</p>
+<p>SOFTWARE</p>
+  </div>
+
+  <div class="tab-content" id="connect">
+    <h2>Connect with LIDE</h2>
+    <a class="connect-link" href="https://github.com/Codebyte15" target="_blank">GitHub</a>
+    <a class="connect-link" href="https://lide15.netlify.app" target="_blank">Website</a>
+  </div>
+
+  <div class="tab-content" id="screenshots">
+    <h2>Screenshots</h2>
+    <p>A Glimpse Of The Code Editor</p>
+    <img width="1600" height="900" alt="LIDE_v3 0 0_pre_release-setup" src="https://github.com/user-attachments/assets/a68b8056-afc1-4441-9770-a5cb9c2b3a56" />
+  </div>
+
 </div>
 
 <script>
+/* Tabs */
+const tabs = document.querySelectorAll('.tab');
+const contents = document.querySelectorAll('.tab-content');
+
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    tabs.forEach(t => t.classList.remove('active'));
+    contents.forEach(c => c.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById(tab.dataset.tab).classList.add('active');
+  });
+});
+
+/* Countdown */
+const countdownEl = document.getElementById("countdown");
 const launchDate = new Date("February 1, 2026 00:00:00").getTime();
 
-const timer = setInterval(() => {
+setInterval(() => {
   const now = new Date().getTime();
   const diff = launchDate - now;
 
   if (diff <= 0) {
-    clearInterval(timer);
-    document.getElementById("countdown").style.display = "none";
-    document.getElementById("launchText").innerHTML = "🎉 LIDE v3.0.0 has launched!";
+    countdownEl.textContent = "🎉 Stable Version Released!";
     return;
   }
 
   const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const mins = Math.floor((diff / (1000 * 60)) % 60);
 
-  document.getElementById("days").textContent = days;
-  document.getElementById("hours").textContent = hours;
-  document.getElementById("minutes").textContent = minutes;
-  document.getElementById("seconds").textContent = seconds;
+  countdownEl.textContent =
+    `Stable Launch in ${days}d ${hours}h ${mins}m`;
 }, 1000);
 </script>
 
