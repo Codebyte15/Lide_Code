@@ -4,7 +4,7 @@ LIDE Editor
 [Badges]
 License: MIT
 Platform: Windows
-Python: Nuitka Compiled
+Python: Cx_Freeze and Pyinstaller Compiled
 Status: Active
 
 📝 About
@@ -16,8 +16,9 @@ LIDE includes:
 - Built-in plugin system
 - Syntax highlighting
 - File-to-Hex generator
-- Fast startup (compiled with Nuitka)
+- Fast startup
 - Minimal and beginner-friendly interface
+- All Features of A Basic CODE EDITOR
 
 Perfect for students, beginners, and minimalist programmers.
 
@@ -26,19 +27,28 @@ Perfect for students, beginners, and minimalist programmers.
 📸 Demo / Screenshot
 --------------------
 App Interface Screenshot:
-<img width="1600" height="900" alt="Screenshot (191)" src="https://github.com/user-attachments/assets/436ca579-c515-4c52-8d09-4e213fc418c2" />
+<img width="1600" height="900" alt="LIDE_v3 0 0_pre_release-setup" src="https://github.com/user-attachments/assets/a68b8056-afc1-4441-9770-a5cb9c2b3a56" />
 
 ------------------------------------------------------------
 
 ✨ Features
 -----------
-- Fully Python-based & compiled with Nuitka
+- Fully Python-based & compiled with Pyinstaller and Cx_Freeze
 - Open Source (MIT License)
 - Plugin System
-- Syntax Highlighting
 - Super Fast Startup
 - Built-in Text/File to Hex Generator
 - Lightweight & designed for low-end systems
+- Chunk Syntax Highlighter
+- In-Built Terminal :- "Ctrl + ,"
+- Bug Fixes with Responsive UI
+- Multifile Management in one session
+- Update System Improvement
+- Select And Replace keywords
+- More Control Over Widgets by  (Settings > Preferences)
+- Fetch Data From Static Html Websites
+- Better File Management
+- Built In Explorer with (file , folder) create and delete options.
 
 ------------------------------------------------------------
 
@@ -61,9 +71,9 @@ SourceForge: https://sourceforge.net/projects/lide-editor/
 💻 System Requirements
 -----------------------
 - Windows 7 / 8 / 10 / 11
-- 1GB RAM (minimum)
-- 150MB free space
-- Python NOT required (precompiled with Nuitka)
+- 100Mb RAM (minimum)
+- 500MB free space
+- Python NOT required (precompiled with Pyinstaller and Cx_Freeze)
 
 ------------------------------------------------------------
 
@@ -80,9 +90,10 @@ SourceForge: https://sourceforge.net/projects/lide-editor/
 --------
 - Open or create any text/code file (.txt, .py, .js, .html, etc.)
 - Use the Plugins menu for installed extensions
-- Use Hex Generator tool for file-to-hex conversion
 - Customize theme and settings
 - Fast startup lets you instantly start coding
+- Begginner Friendly Coding Software
+- For Indie Developers
 
 ------------------------------------------------------------
 
@@ -109,12 +120,17 @@ How to create a plugin:
 
 📜 Changelog
 -------------
-v2.2.0:
-- Added Plugin System
-- Improved Code Format
-- Faster Startup
-- Automatic features in Python Extension plugin
-
+v3.3.0_pre_release:
+1) Chunk Syntax Highlighter
+2) In-Built Terminal :- "Ctrl + ,"
+3) Bug Fixes with Responsive UI
+4) Multifile Management in one session
+5) Update System Improvement
+6) Select And Replace keywords
+7) More Control Over Widgets by  (Settings > Preferences)
+8) Fetch Data From Static Html Websites
+9) Better File Management
+10) Built In Explorer with (file , folder) create and delete options.
 ------------------------------------------------------------
 
 🤝 Contributing
