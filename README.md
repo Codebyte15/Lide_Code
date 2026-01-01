@@ -27,7 +27,7 @@ Perfect for students, beginners, and minimalist programmers.
 📸 Demo / Screenshot
 --------------------
 App Interface Screenshot:
-<img width="1600" height="900" alt="LIDE_v3 0 0_pre_release-setup" src="https://github.com/user-attachments/assets/a68b8056-afc1-4441-9770-a5cb9c2b3a56" />
+<img width="1600" height="900" alt="LIDE_v3 0 0_pre_release-setup" src="https://github.com/user-attachments/assets/a68b8056-afc1-4441-9770-a5cb9c2b3a56](https://github.com/user-attachments/assets/9bb4d72a-eb43-4229-aee1-1efaa5a558ff" />
 
 ------------------------------------------------------------
 
@@ -114,12 +114,13 @@ How to create a plugin:
 - AI Chat on side
 - Built-in decompiler
 - Error-free auto version checker
+- Workspace Mode For Deep Work
 
 ------------------------------------------------------------
 
 📜 Changelog
 -------------
-v3.3.0_pre_release:
+v3.0.0_stable:
 1) Chunk Syntax Highlighter
 2) In-Built Terminal :- "Ctrl + ,"
 3) Bug Fixes with Responsive UI
