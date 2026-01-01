@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LIDE Editor v3.0.0 – Pre-Release</title>
+<title>LIDE Editor v3.0.0 – Stable</title>
 
 <link rel="icon" href="lide.png" type="image/png">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -58,34 +58,16 @@ body {
   font-size: 1.05rem;
 }
 
-/* Countdown */
-.countdown {
+/* Notice */
+.notice {
   margin-top: 18px;
   padding: 14px 22px;
   background: #ffffff;
   border: 1px solid #e2e8f0;
   border-radius: 10px;
-  font-weight: 600;
-  color: #1e40af;
+  font-weight: 500;
+  color: #475569;
   box-shadow: 0 6px 20px rgba(0,0,0,0.04);
-}
-
-/* Warning box */
-.warning-box {
-  max-width: 900px;
-  width: 100%;
-  margin: 25px 0 35px;
-  padding: 18px 22px;
-  background: #fff7ed;
-  border-left: 5px solid #f59e0b;
-  border-radius: 8px;
-  color: #92400e;
-}
-
-.warning-box strong {
-  display: block;
-  margin-bottom: 6px;
-  font-size: 1rem;
 }
 
 /* Buttons */
@@ -172,15 +154,13 @@ body {
   line-height: 1.6;
 }
 
-/* Screenshot Image Styling */
+/* Screenshot */
 #screenshots img {
   width: 100%;
-  height: auto;
-  max-width: 100%;
-  max-height: 600px; /* adjust to desired frame height */
+  max-height: 600px;
+  object-fit: contain;
   border-radius: 8px;
   margin-top: 15px;
-  object-fit: contain;
 }
 
 /* Links */
@@ -209,24 +189,22 @@ body {
 
   <div class="header">
     <img src="lide.png" alt="LIDE Logo">
-    <h1>LIDE Editor v3.0.0 – Pre-Release</h1>
-    <p>Early access build before stable launch</p>
+    <h1>LIDE Editor v3.0.0 – Stable</h1>
+    <p>Official stable release</p>
 
-    <div class="countdown" id="countdown">
-      Stable release launching on 1 February
+    <div class="notice">
+      For any bugs or issues, please message  
+      <strong>@astro_moinak</strong> on Instagram
     </div>
 
     <div class="download-area">
-      <a href="https://github.com/Codebyte15/Lide_Code/releases/download/v3.0.0_pre_release/LIDE_v3.0.0_pre_release-setup.zip" class="download-btn">Download Pre-Release</a>
-      <a href="https://github.com/Codebyte15/Lide_Code_Source" class="download-btn source-btn">Source Code</a>
+      <a href="https://github.com/Codebyte15/Lide_Code/releases/download/v3.0.0_stable/LIDE_v3.0.0_stable-setup.zip" class="download-btn">
+        Download Stable
+      </a>
+      <a href="https://github.com/Codebyte15/Lide_Code_Source" class="download-btn source-btn">
+        Source Code
+      </a>
     </div>
-  </div>
-
-  <div class="warning-box">
-    <strong>⚠ Pre-Release Notice</strong>
-    This version may contain bugs, unfinished features, or critical errors.  
-    If you face any issues, please DM on Instagram  
-    <strong>@astro_moinak</strong>
   </div>
 
   <div class="tabs">
@@ -236,20 +214,19 @@ body {
     <div class="tab" data-tab="screenshots">Screenshots</div>
   </div>
 
-  <!-- Docs (UNCHANGED FEATURES) -->
   <div class="tab-content active" id="docs">
     <h2>LIDE v3.0.0 Stable Features</h2>
     <ul>
-      <li><strong>Chunk Syntax Highlighter:</strong> Highlight code efficiently in chunks.</li>
-      <li><strong>In-Built Terminal:</strong> Integrated terminal (Ctrl + ,) for faster workflows.</li>
-      <li><strong>Bug Fixes & Responsive UI:</strong> Improved stability and interface responsiveness.</li>
-      <li><strong>Multifile Management:</strong> Work with multiple files in a single session.</li>
-      <li><strong>Update System Improvement:</strong> Smoother and more reliable updates.</li>
-      <li><strong>Select and Replace Keywords:</strong> Quickly find and replace text.</li>
-      <li><strong>Enhanced Widget Control:</strong> Customize editor behavior via Settings &gt; Preferences.</li>
-      <li><strong>Cache and Saved File Management:</strong> Delete unnecessary files safely.</li>
-      <li><strong>Static HTML Data Fetch:</strong> Import and read data from static websites.</li>
-      <li><strong>Better File Management:</strong> Organize your projects efficiently.</li>
+      <li><strong>Chunk Syntax Highlighter</strong></li>
+      <li><strong>In-Built Terminal</strong></li>
+      <li><strong>Improved UI & Bug Fixes</strong></li>
+      <li><strong>Multi-file Management</strong></li>
+      <li><strong>Better Update System</strong></li>
+      <li><strong>Find & Replace</strong></li>
+      <li><strong>Enhanced Preferences</strong></li>
+      <li><strong>Cache Cleanup Tools</strong></li>
+      <li><strong>Static HTML Data Fetch</strong></li>
+      <li><strong>Improved File Explorer</strong></li>
     </ul>
   </div>
 
@@ -284,14 +261,13 @@ body {
 
   <div class="tab-content" id="screenshots">
     <h2>Screenshots</h2>
-    <p>A Glimpse Of The Code Editor</p>
-    <img width="1600" height="900" alt="LIDE_v3 0 0_pre_release-setup" src="https://github.com/user-attachments/assets/a68b8056-afc1-4441-9770-a5cb9c2b3a56" />
+    <p>A glimpse of the editor</p>
+    <img src="https://github.com/user-attachments/assets/9bb4d72a-eb43-4229-aee1-1efaa5a558ff" alt="LIDE Editor Screenshot">
   </div>
 
 </div>
 
 <script>
-/* Tabs */
 const tabs = document.querySelectorAll('.tab');
 const contents = document.querySelectorAll('.tab-content');
 
@@ -303,27 +279,6 @@ tabs.forEach(tab => {
     document.getElementById(tab.dataset.tab).classList.add('active');
   });
 });
-
-/* Countdown */
-const countdownEl = document.getElementById("countdown");
-const launchDate = new Date("February 1, 2026 00:00:00").getTime();
-
-setInterval(() => {
-  const now = new Date().getTime();
-  const diff = launchDate - now;
-
-  if (diff <= 0) {
-    countdownEl.textContent = "🎉 Stable Version Released!";
-    return;
-  }
-
-  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-  const mins = Math.floor((diff / (1000 * 60)) % 60);
-
-  countdownEl.textContent =
-    `Stable Launch in ${days}d ${hours}h ${mins}m`;
-}, 1000);
 </script>
 
 </body>
