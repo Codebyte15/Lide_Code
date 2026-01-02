@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
-/* Reset */
+/* ---------------- Reset ---------------- */
 * {
   margin: 0;
   padding: 0;
@@ -26,7 +26,7 @@ body {
   color: #2d3748;
 }
 
-/* Container */
+/* ---------------- Layout ---------------- */
 .fullscreen-container {
   width: 100%;
   min-height: 100%;
@@ -36,7 +36,7 @@ body {
   padding: 40px 20px;
 }
 
-/* Header */
+/* ---------------- Header ---------------- */
 .header {
   text-align: center;
   margin-bottom: 30px;
@@ -44,7 +44,7 @@ body {
 
 .header img {
   width: 110px;
-  margin-bottom: 15px;
+  margin-bottom: 14px;
 }
 
 .header h1 {
@@ -53,12 +53,12 @@ body {
 }
 
 .header p {
-  margin-top: 8px;
-  color: #4a5568;
+  margin-top: 6px;
   font-size: 1.05rem;
+  color: #4a5568;
 }
 
-/* Notice */
+/* ---------------- Notice ---------------- */
 .notice {
   margin-top: 18px;
   padding: 14px 22px;
@@ -70,12 +70,13 @@ body {
   box-shadow: 0 6px 20px rgba(0,0,0,0.04);
 }
 
-/* Buttons */
+/* ---------------- Downloads ---------------- */
 .download-area {
   display: flex;
-  gap: 18px;
+  gap: 16px;
   margin-top: 22px;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .download-btn {
@@ -84,7 +85,7 @@ body {
   font-weight: 600;
   border-radius: 8px;
   text-decoration: none;
-  color: #fff;
+  color: #ffffff;
   background: #2563eb;
   transition: 0.25s ease;
 }
@@ -101,12 +102,77 @@ body {
   background: #64748b;
 }
 
-/* Tabs */
+/* ---------------- Portable Builds ---------------- */
+.portable-section {
+  margin-top: 26px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 22px 26px;
+  max-width: 760px;
+  width: 100%;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+}
+
+.portable-section h3 {
+  font-size: 1.1rem;
+  color: #2563eb;
+  margin-bottom: 8px;
+}
+
+.portable-section p {
+  font-size: 0.95rem;
+  color: #475569;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.portable-buttons {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.portable-btn {
+  flex: 1;
+  min-width: 200px;
+  text-align: center;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #ffffff;
+  background: #0f172a;
+  transition: 0.25s ease;
+}
+
+.portable-btn:hover {
+  background: #020617;
+}
+
+.portable-btn.zip {
+  background: #16a34a;
+}
+
+.portable-btn.zip:hover {
+  background: #15803d;
+}
+
+.portable-btn.sevenz {
+  background: #7c3aed;
+}
+
+.portable-btn.sevenz:hover {
+  background: #6d28d9;
+}
+
+/* ---------------- Tabs ---------------- */
 .tabs {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   justify-content: center;
+  margin-top: 32px;
   border-bottom: 1px solid #e2e8f0;
 }
 
@@ -125,7 +191,7 @@ body {
   color: #2563eb;
 }
 
-/* Content */
+/* ---------------- Tab Content ---------------- */
 .tab-content {
   display: none;
   max-width: 900px;
@@ -154,16 +220,16 @@ body {
   line-height: 1.6;
 }
 
-/* Screenshot */
+/* ---------------- Screenshots ---------------- */
 #screenshots img {
   width: 100%;
   max-height: 600px;
   object-fit: contain;
   border-radius: 8px;
-  margin-top: 15px;
+  margin-top: 16px;
 }
 
-/* Links */
+/* ---------------- Links ---------------- */
 .connect-link {
   font-weight: 600;
   color: #2563eb;
@@ -175,9 +241,10 @@ body {
   text-decoration: underline;
 }
 
-/* Responsive */
+/* ---------------- Responsive ---------------- */
 @media (max-width: 768px) {
-  .download-area {
+  .download-area,
+  .portable-buttons {
     flex-direction: column;
   }
 }
@@ -193,17 +260,45 @@ body {
     <p>Official stable release</p>
 
     <div class="notice">
-      For any bugs or issues, please message  
+      For bugs or issues, contact
       <strong>@astro_moinak</strong> on Instagram
     </div>
 
     <div class="download-area">
-      <a href="https://github.com/Codebyte15/Lide_Code/releases/download/v3.0.0_stable/LIDE_v3.0.0_stable-setup.zip" class="download-btn">
-        Download Stable
+      <a
+        href="https://github.com/Codebyte15/Lide_Code/releases/download/v3.0.0_stable/LIDE_v3.0.0_stable-setup.zip"
+        class="download-btn">
+        Download Installer
       </a>
-      <a href="https://github.com/Codebyte15/Lide_Code_Source" class="download-btn source-btn">
+
+      <a
+        href="https://github.com/Codebyte15/Lide_Code_Source"
+        class="download-btn source-btn">
         Source Code
       </a>
+    </div>
+
+    <div class="portable-section">
+      <h3>Portable Builds</h3>
+      <p>
+        Portable builds are distributed as archive packages without an installer.
+        After extraction, LIDE can be executed directly from the extracted directory.
+        These builds do not write to the system registry or modify system-level settings.
+      </p>
+
+      <div class="portable-buttons">
+        <a
+          href="https://github.com/Codebyte15/Lide_Code/releases/download/v3.0.0_stable/LIDE_v3.0.0_stable-portable.zip"
+          class="portable-btn zip">
+          Portable ZIP
+        </a>
+
+        <a
+          href="https://github.com/Codebyte15/Lide_Code/releases/download/v3.0.0_stable/LIDE_v3.0.0_stable-portable.7z"
+          class="portable-btn sevenz">
+          Portable 7Z
+        </a>
+      </div>
     </div>
   </div>
 
@@ -215,18 +310,17 @@ body {
   </div>
 
   <div class="tab-content active" id="docs">
-    <h2>LIDE v3.0.0 Stable Features</h2>
+    <h2>LIDE v3.0.0 Features</h2>
     <ul>
-      <li><strong>Chunk Syntax Highlighter</strong></li>
-      <li><strong>In-Built Terminal</strong></li>
-      <li><strong>Improved UI & Bug Fixes</strong></li>
-      <li><strong>Multi-file Management</strong></li>
-      <li><strong>Better Update System</strong></li>
-      <li><strong>Find & Replace</strong></li>
-      <li><strong>Enhanced Preferences</strong></li>
-      <li><strong>Cache Cleanup Tools</strong></li>
-      <li><strong>Static HTML Data Fetch</strong></li>
-      <li><strong>Improved File Explorer</strong></li>
+      <li>Chunk-based syntax highlighting</li>
+      <li>Integrated terminal</li>
+      <li>Multi-file management</li>
+      <li>Improved update system</li>
+      <li>Find and replace</li>
+      <li>Enhanced preferences</li>
+      <li>Cache cleanup tools</li>
+      <li>Static HTML data fetch</li>
+      <li>Improved file explorer</li>
     </ul>
   </div>
 
@@ -254,15 +348,16 @@ body {
   </div>
 
   <div class="tab-content" id="connect">
-    <h2>Connect with LIDE</h2>
+    <h2>Connect</h2>
     <a class="connect-link" href="https://github.com/Codebyte15" target="_blank">GitHub</a>
     <a class="connect-link" href="https://lide15.netlify.app" target="_blank">Website</a>
   </div>
 
   <div class="tab-content" id="screenshots">
     <h2>Screenshots</h2>
-    <p>A glimpse of the editor</p>
-    <img src="https://github.com/user-attachments/assets/9bb4d72a-eb43-4229-aee1-1efaa5a558ff" alt="LIDE Editor Screenshot">
+    <img
+      src="https://github.com/user-attachments/assets/9bb4d72a-eb43-4229-aee1-1efaa5a558ff"
+      alt="LIDE Editor Screenshot">
   </div>
 
 </div>
