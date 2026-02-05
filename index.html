@@ -3,380 +3,344 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LIDE Editor v3.0.1 – Micro Update</title>
+<title>LIDE Editor v3.0.1</title>
 
-<link rel="icon" href="lide.png" type="image/png">
+<link rel="icon" href="lide.png">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
-/* ---------------- Reset ---------------- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html, body {
-  height: 100%;
-}
-
 body {
   font-family: 'Inter', sans-serif;
-  background: #f5f7fa;
-  color: #2d3748;
+  background: #f1f5f9;
+  color: #0f172a;
 }
 
-/* ---------------- Layout ---------------- */
-.fullscreen-container {
-  width: 100%;
-  min-height: 100%;
+/* ---------- NAVBAR ---------- */
+.navbar {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  padding: 40px 20px;
-}
-
-/* ---------------- Header ---------------- */
-.header {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.header img {
-  width: 110px;
-  margin-bottom: 14px;
-}
-
-.header h1 {
-  font-size: 2.2rem;
-  color: #2563eb;
-}
-
-.header p {
-  margin-top: 6px;
-  font-size: 1.05rem;
-  color: #4a5568;
-}
-
-/* ---------------- Notice ---------------- */
-.notice {
-  margin-top: 18px;
-  padding: 14px 22px;
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 10px;
-  font-weight: 500;
-  color: #475569;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.04);
-}
-
-/* ---------------- Downloads ---------------- */
-.download-area {
-  display: flex;
-  gap: 16px;
-  margin-top: 22px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.download-btn {
-  padding: 14px 30px;
-  font-size: 0.95rem;
-  font-weight: 600;
-  border-radius: 8px;
-  text-decoration: none;
-  color: #ffffff;
-  background: #2563eb;
-  transition: 0.25s ease;
-}
-
-.download-btn:hover {
-  background: #1e40af;
-}
-
-/* ---------------- Portable Builds ---------------- */
-.portable-section {
-  margin-top: 26px;
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 12px;
-  padding: 22px 26px;
-  max-width: 760px;
-  width: 100%;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.04);
-}
-
-.portable-section h3 {
-  font-size: 1.1rem;
-  color: #2563eb;
-  margin-bottom: 8px;
-}
-
-.portable-section p {
-  font-size: 0.95rem;
-  color: #475569;
-  line-height: 1.6;
-  margin-bottom: 16px;
-}
-
-.portable-buttons {
-  display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
-}
-
-.portable-btn {
-  flex: 1;
-  min-width: 200px;
-  text-align: center;
-  padding: 12px 20px;
-  border-radius: 8px;
-  font-weight: 600;
-  text-decoration: none;
-  color: #ffffff;
-  background: #0f172a;
-  transition: 0.25s ease;
-}
-
-.portable-btn:hover {
+  justify-content: space-between;
+  padding: 18px 32px;
   background: #020617;
+  color: white;
 }
 
-.portable-btn.zip {
-  background: #16a34a;
-}
-
-.portable-btn.zip:hover {
-  background: #15803d;
-}
-
-.portable-btn.sevenz {
-  background: #7c3aed;
-}
-
-.portable-btn.sevenz:hover {
-  background: #6d28d9;
-}
-
-/* ---------------- Tabs ---------------- */
-.tabs {
+.nav-left {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-  margin-top: 32px;
-  border-bottom: 1px solid #e2e8f0;
+  align-items: center;
+  gap: 14px;
 }
 
-.tab {
-  padding: 12px 20px;
+.nav-left img {
+  width: 40px;
+}
+
+.nav-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.nav-tabs {
+  display: flex;
+  gap: 22px;
+}
+
+.nav-tab {
   cursor: pointer;
   font-weight: 600;
-  color: #475569;
-  border-radius: 6px 6px 0 0;
+  opacity: 0.85;
 }
 
-.tab.active {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-bottom: none;
+.nav-tab.active,
+.nav-tab:hover {
+  opacity: 1;
+  color: #60a5fa;
+}
+
+/* ---------- MAIN LAYOUT ---------- */
+.main {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 28px;
+  padding: 32px;
+  max-width: 1400px;
+  margin: auto;
+}
+
+/* ---------- LEFT PANEL ---------- */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 14px;
+  padding: 22px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+}
+
+.card h3 {
   color: #2563eb;
+  margin-bottom: 12px;
 }
 
-/* ---------------- Tab Content ---------------- */
+/* Download buttons */
+.btn {
+  display: block;
+  text-align: center;
+  padding: 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  color: white;
+  background: #2563eb;
+  transition: 0.2s;
+}
+
+.btn:hover { background: #1e40af; }
+
+.btn.green { background: #16a34a; }
+.btn.green:hover { background: #15803d; }
+
+.btn.purple { background: #7c3aed; }
+.btn.purple:hover { background: #6d28d9; }
+
+.btn.orange { background: #f97316; }
+.btn.orange:hover { background: #ea580c; }
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ---------- CONTENT ---------- */
+.content {
+  background: white;
+  border-radius: 14px;
+  padding: 28px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+}
+
 .tab-content {
   display: none;
-  max-width: 900px;
-  width: 100%;
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  padding: 30px;
-  border-radius: 0 0 10px 10px;
 }
 
 .tab-content.active {
   display: block;
 }
 
-.tab-content h2 {
+.content h2 {
   color: #2563eb;
-  margin-bottom: 15px;
+  margin-bottom: 16px;
 }
 
-.tab-content ul {
+.content ul {
   margin-left: 20px;
 }
 
-.tab-content li {
+.content li {
   margin-bottom: 10px;
   line-height: 1.6;
 }
 
-/* ---------------- Screenshots ---------------- */
 #screenshots img {
   width: 100%;
-  max-height: 600px;
-  object-fit: contain;
-  border-radius: 8px;
+  border-radius: 10px;
   margin-top: 16px;
 }
 
-/* ---------------- Links ---------------- */
-.connect-link {
-  font-weight: 600;
-  color: #2563eb;
-  text-decoration: none;
-  margin-right: 18px;
+/* ---------- UPCOMING ---------- */
+.upcoming {
+  background: linear-gradient(135deg,#2563eb,#1e40af);
+  color: white;
 }
 
-.connect-link:hover {
+.upcoming h3 { color: white; }
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 900px) {
+  .main {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-tabs {
+    display: none;
+  }
+}
+
+#connect h2 {
+  font-size: 32px;
+}
+
+#connect .connect-item {
+  font-size: 20px;   /* increase main text */
+  margin: 12px 0;
+}
+
+#connect .connect-item strong {
+  font-size: 22px;   /* label slightly bigger */
+}
+
+#connect a {
+  font-size: 20px;
+  color: #38bdf8;
+  text-decoration: none;
+}
+
+#connect a:hover {
   text-decoration: underline;
 }
 
-/* ---------------- Responsive ---------------- */
-@media (max-width: 768px) {
-  .download-area,
-  .portable-buttons {
-    flex-direction: column;
-  }
-}
 </style>
 </head>
 
 <body>
-<div class="fullscreen-container">
 
-  <div class="header">
-    <img src="lide.png" alt="LIDE Logo">
-    <h1>LIDE Editor v3.0.1 – Micro Update</h1>
-    <p>Official stable release</p>
+<!-- NAVBAR -->
+<div class="navbar">
+  <div class="nav-left">
+    <img src="lide.png">
+    <div class="nav-title">LIDE Editor v3.0.1</div>
+  </div>
+  <div class="nav-tabs">
+    <div class="nav-tab active" data-tab="docs">Docs</div>
+    <div class="nav-tab" data-tab="license">License</div>
+    <div class="nav-tab" data-tab="connect">Connect</div>
+    <div class="nav-tab" data-tab="screenshots">Screenshots</div>
+  </div>
+</div>
 
-    <div class="notice">
-      For bugs or issues, contact
-      <strong>@astro_moinak</strong> on Instagram
+<!-- MAIN -->
+<div class="main">
+
+  <!-- LEFT -->
+  <div class="sidebar">
+
+    <div class="card">
+      <h3>Download LIDE Latest Version</h3>
+      <a class="btn" href="https://github.com/Codebyte15/Lide_Code/releases/download/v3.0.1/LIDE_v3.0.1-setup.zip">Windows x64 Installer</a>
+    </div>
+    
+    <div class="card upcoming">
+      <h3>v3.1.0 Incoming 🚀</h3>
+      <p>10 March<br>Better structure, optimization & plugin control.</p>
     </div>
 
-    <!-- ---------------- Downloads ---------------- -->
-    <div class="download-area">
-      <!-- Latest Release -->
-      <a
-        href="https://github.com/Codebyte15/Lide_Code/releases/download/v3.0.1/LIDE_v3.0.1-setup.zip"
-        class="download-btn">
-        Download Latest Release
-      </a>
-    </div>
-
-    <!-- ---------------- Portable Builds ---------------- -->
-    <div class="portable-section">
+    <div class="card">
       <h3>Portable Builds</h3>
-      <p>
-        Portable builds are distributed as archive packages without an installer.
-        After extraction, LIDE can be executed directly from the extracted directory.
-        These builds do not write to the system registry or modify system-level settings.
-      </p>
-
-      <div class="portable-buttons">
-        <!-- Latest Portable ZIP -->
-        <a
-          href="https://github.com/Codebyte15/Lide_Code/releases/download/v3.0.1/LIDE_v3.0.1-portable.zip"
-          class="portable-btn zip">
-          Portable ZIP
-        </a>
-
-        <!-- Latest Portable 7Z -->
-        <a
-          href="https://github.com/Codebyte15/Lide_Code/releases/download/v3.0.1/LIDE_v3.0.1-portable.7z"
-          class="portable-btn sevenz">
-          Portable 7Z
-        </a>
+      <div class="stack">
+        <a class="btn green" href="https://github.com/Codebyte15/Lide_Code/releases/download/v3.0.1/LIDE_v3.0.1-portable.zip">Portable ZIP (v3.0.1)</a>
+        <a class="btn purple" href="https://github.com/Codebyte15/Lide_Code/releases/download/v3.0.1/LIDE_v3.0.1-portable.7z">Portable 7Z (v3.0.1)</a>
       </div>
     </div>
 
-    <!-- ---------------- Visit Source Code ---------------- -->
-    <div class="portable-section">
-      <h3>Visit Source Code</h3>
-      <p>
-        Explore the full source code, report issues, or contribute to the project on GitHub.
-      </p>
-      <a href="https://github.com/Codebyte15/Lide_Code_Source" target="_blank" class="download-btn" style="background:#f97316;">
-        GitHub Repository
-      </a>
+    <div class="card">
+      <h3>Source Code</h3>
+      <a class="btn orange" href="https://github.com/Codebyte15/Lide_Code_Source">GitHub Repo</a>
     </div>
+
   </div>
 
-  <!-- ---------------- Tabs ---------------- -->
-  <div class="tabs">
-    <div class="tab active" data-tab="docs">Docs</div>
-    <div class="tab" data-tab="license">License</div>
-    <div class="tab" data-tab="connect">Connect</div>
-    <div class="tab" data-tab="screenshots">Screenshots</div>
+  <!-- RIGHT -->
+  <div class="content">
+
+    <div class="tab-content active" id="docs">
+      <h2>Features</h2>
+      <ul>
+        <li>Basic Code Editor For Indie Developers
+        <li>Integrated terminal</li>
+        <li>Multi-file management</li>
+        <li>Auto Updater for new versions</li>
+        <li>Find and Replace Text Feature</li>
+        <li>Enhanced preferences Tabs for Customization</li>
+        <li>Login Info Viewer</li>
+        <li>Static HTML Source Code Fetcher Options</li>
+        <li>Preview Pane On right side</li>
+        <li>Explorer On Left Side</li>
+        <li>Plugin System with great control</li>
+        <li>Chunk-based syntax highlighting</li>
+        <li>Auto Indentation</li>
+        <li>Auto Saver Option</li>
+        <li>Very Fast Startup</li>
+        <li>Less RAM and Space required to run</li>
+      </ul>
+    </div>
+
+    <div class="tab-content" id="license">
+      <h2>MIT License</h2>
+      <p>Copyright (c) [2025] [Moinak Debnath]</p>
+  
+      <p>Permission is hereby granted, free of charge, to any person obtaining a copy</p>
+      <p>of this software and associated documentation files (the "Software"), to deal</p>
+      <p>in the Software without restriction, including without limitation the rights</p>
+      <p>to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</p>
+      <p>copies of the Software, and to permit persons to whom the Software is</p>
+      <p>furnished to do so, subject to the following conditions:</p>
+
+      <p>The above copyright notice and this permission notice shall be included in all</p>
+      <p>copies or substantial portions of the Software.</p><br>
+
+      <p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</p><br>
+      <p>IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</p><br>
+      <p>FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</p><br>
+      <p>AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</p><br>
+      <p>LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</p><br>
+      <p>OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</p><br>
+      <p>SOFTWARE</p>
+    </div>
+
+    <div class="tab-content" id="connect">
+      <h2>Connect</h2>
+
+      <p class="connect-item">
+        <strong>Website</strong> :--&gt;
+        <a href="https://lide15.netlify.app" target="_blank">https://lide15.netlify.app</a>
+      </p>
+
+      <p class="connect-item">
+        <strong>GitHub</strong> :--&gt;
+        <a href="https://github.com/Codebyte15" target="_blank">@Codebyte15</a>
+      </p>
+
+      <p class="connect-item">
+        <strong>Instagram</strong> :--&gt;
+        <a href="https://www.instagram.com/astro_moinak" target="_blank">@astro_moinak</a>
+      </p>
+
+      <p class="connect-item">
+        <strong>Gmail</strong> :--&gt;
+        <a href="mailto:rubikscubesolver56@gmail.com">rubikscubesolver56@gmail.com</a>
+      </p>
+    </div>
+
+    <div class="tab-content" id="screenshots">
+      <h2>Screenshots</h2>
+      <img src="https://github.com/user-attachments/assets/9bb4d72a-eb43-4229-aee1-1efaa5a558ff">
+    </div>
+
   </div>
-
-  <div class="tab-content active" id="docs">
-    <h2>LIDE v3.0.1 Features</h2>
-    <ul>
-      <li>Chunk-based syntax highlighting</li>
-      <li>Integrated terminal</li>
-      <li>Multi-file management</li>
-      <li>Improved update system</li>
-      <li>Find and replace</li>
-      <li>Enhanced preferences</li>
-      <li>Login Info Checker</li>
-      <li>Static HTML data fetch</li>
-      <li>Improved file explorer</li>
-      <li>Auto Downloader Enhancement</li>
-    </ul>
-  </div>
-
-  <div class="tab-content" id="license">
-    <h2>MIT License</h2>
-    <p>Copyright (c) [2025] [Moinak Debnath]</p>
-
-    <p>Permission is hereby granted, free of charge, to any person obtaining a copy</p>
-    <p>of this software and associated documentation files (the "Software"), to deal</p>
-    <p>in the Software without restriction, including without limitation the rights</p>
-    <p>to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</p>
-    <p>copies of the Software, and to permit persons to whom the Software is</p>
-    <p>furnished to do so, subject to the following conditions:</p>
-
-    <p>The above copyright notice and this permission notice shall be included in all</p>
-    <p>copies or substantial portions of the Software.</p>
-
-    <p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</p>
-    <p>IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</p>
-    <p>FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</p>
-    <p>AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</p>
-    <p>LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</p>
-    <p>OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</p>
-    <p>SOFTWARE</p>
-  </div>
-
-  <div class="tab-content" id="connect">
-    <h2>Connect</h2>
-    <a class="connect-link" href="https://github.com/Codebyte15" target="_blank">GitHub</a>
-    <a class="connect-link" href="https://lide15.netlify.app" target="_blank">Website</a>
-  </div>
-
-  <div class="tab-content" id="screenshots">
-    <h2>Screenshots</h2>
-    <img
-      src="https://github.com/user-attachments/assets/9bb4d72a-eb43-4229-aee1-1efaa5a558ff"
-      alt="LIDE Editor Screenshot">
-  </div>
-
 </div>
 
 <script>
-const tabs = document.querySelectorAll('.tab');
+const tabs = document.querySelectorAll('.nav-tab');
 const contents = document.querySelectorAll('.tab-content');
 
 tabs.forEach(tab => {
-  tab.addEventListener('click', () => {
+  tab.onclick = () => {
     tabs.forEach(t => t.classList.remove('active'));
     contents.forEach(c => c.classList.remove('active'));
     tab.classList.add('active');
     document.getElementById(tab.dataset.tab).classList.add('active');
-  });
+  }
 });
 </script>
 
