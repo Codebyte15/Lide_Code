@@ -112,7 +112,7 @@ How to create a plugin:
 - More plugins
 - Bug fixes and optimizations
 - AI Chat on side
-- Built-in decompiler
+- Better Optimization
 - Error-free auto version checker
 - Workspace Mode For Deep Work
 
