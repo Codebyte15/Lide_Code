@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feedback - LIDE Editor</title>
+
+<link rel="icon" href="lide.png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 32px;
+  background: #020617;
+  color: white;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.nav-left img {
+  width: 40px;
+}
+
+.nav-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.nav-tabs a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  opacity: 0.85;
+}
+
+.nav-tabs a:hover {
+  opacity: 1;
+  color: #60a5fa;
+}
+
+/* MAIN */
+.main {
+  max-width: 700px;
+  margin: 60px auto;
+  padding: 32px;
+}
+
+.card {
+  background: white;
+  padding: 32px;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+}
+
+h2 {
+  color: #2563eb;
+  margin-bottom: 20px;
+}
+
+/* FORM */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+input, textarea {
+  padding: 14px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  font-family: inherit;
+  font-size: 15px;
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+button {
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  background: #2563eb;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #1e40af;
+}
+
+/* SUCCESS MESSAGE */
+.success {
+  margin-top: 16px;
+  color: #16a34a;
+  font-weight: 600;
+  display: none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+  <div class="nav-left">
+    <img src="lide.png">
+    <div class="nav-title">LIDE Editor</div>
+  </div>
+
+  <div class="nav-tabs">
+    <a href="index.html">Home</a>
+  </div>
+</div>
+
+<div class="main">
+  <div class="card">
+    <h2>Send Feedback</h2>
+
+    <!-- NETLIFY FORM READY -->
+    <form name="feedback" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="feedback">
+
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Feedback..." required></textarea>
+
+      <button type="submit">Submit Feedback</button>
+    </form>
+
+    <div class="success" id="successMessage">
+      Thank you! Your feedback has been submitted 🚀
+    </div>
+  </div>
+</div>
+
+<script>
+const form = document.querySelector("form");
+const successMessage = document.getElementById("successMessage");
+
+form.addEventListener("submit", function() {
+  successMessage.style.display = "block";
+});
+</script>
+
+</body>
+</html>
