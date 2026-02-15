@@ -7,21 +7,6 @@ Platform: Windows
 Python: Cx_Freeze and Pyinstaller Compiled
 Status: Active
 
-📝 About
---------
-LIDE (Light IDE) is a lightweight, fast, and beginner-friendly code editor designed especially for low-end PCs and vibe coders.
-It focuses on simplicity, smooth performance, and essential coding tools without heavy RAM usage.
-
-LIDE includes:
-- Built-in plugin system
-- Syntax highlighting
-- File-to-Hex generator
-- Fast startup
-- Minimal and beginner-friendly interface
-- All Features of A Basic CODE EDITOR
-
-Perfect for students, beginners, and minimalist programmers.
-
 ------------------------------------------------------------
 
 📸 Demo / Screenshot
@@ -33,22 +18,26 @@ App Interface Screenshot:
 
 ✨ Features
 -----------
-- Fully Python-based & compiled with Pyinstaller and Cx_Freeze
-- Open Source (MIT License)
-- Plugin System
-- Super Fast Startup
-- Built-in Text/File to Hex Generator
-- Lightweight & designed for low-end systems
-- Chunk Syntax Highlighter
-- In-Built Terminal :- "Ctrl + ,"
-- Bug Fixes with Responsive UI
-- Multifile Management in one session
-- Update System Improvement
-- Select And Replace keywords
-- More Control Over Widgets by  (Settings > Preferences)
-- Fetch Data From Static Html Websites
-- Better File Management
-- Built In Explorer with (file , folder) create and delete options.
+1) Less RAM usage        
+2) Fast startup          
+3) Inbuilt Autosave      
+4) Inbuilt PNG Viewer    
+5) Syntax Highlighting   
+6) Plugin System         
+7) Inbuilt Terminal      
+8) Inbuilt Explorer      
+9) Inbuilt Preview Panel    
+10) Auto Indent.         
+11) Modern UI with CustomTkinter
+12) Better Optimization
+13) Session Data gets Restored
+14) Has Inbuilt Basic Code Runner
+15) Convert File Into Hex
+16) Fetch Source Code from Static Websites
+17) Auto Update Checker and Updater
+18) Modern Initialization Screen
+19) Security Features After version 3.1.0  
+20) Customizable Using Settings
 
 ------------------------------------------------------------
 
@@ -71,7 +60,7 @@ SourceForge: https://sourceforge.net/projects/lide-editor/
 -----------------------
 - Windows 7 / 8 / 10 / 11
 - 100Mb RAM (minimum)
-- 500MB free space
+- 200MB free space
 - Python NOT required (precompiled with Pyinstaller and Cx_Freeze)
 
 ------------------------------------------------------------
