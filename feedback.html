@@ -9,25 +9,25 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Inter', sans-serif; background: #f1f5f9; color: #0f172a; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Inter', sans-serif; background:#f1f5f9; color:#0f172a; }
 
-.navbar { display: flex; align-items: center; justify-content: space-between; padding: 18px 32px; background: #020617; color: white; }
-.nav-left { display: flex; align-items: center; gap: 14px; }
-.nav-left img { width: 40px; }
-.nav-title { font-size: 1.2rem; font-weight: 700; }
-.nav-tabs a { color: white; text-decoration: none; font-weight: 600; opacity: 0.85; }
-.nav-tabs a:hover { opacity: 1; color: #60a5fa; }
+.navbar { display:flex; align-items:center; justify-content:space-between; padding:18px 32px; background:#020617; color:white; }
+.nav-left { display:flex; align-items:center; gap:14px; }
+.nav-left img { width:40px; }
+.nav-title { font-size:1.2rem; font-weight:700; }
+.nav-tabs a { color:white; text-decoration:none; font-weight:600; opacity:0.85; }
+.nav-tabs a:hover { opacity:1; color:#60a5fa; }
 
-.main { max-width: 700px; margin: 60px auto; padding: 32px; }
-.card { background: white; padding: 32px; border-radius: 14px; box-shadow: 0 8px 24px rgba(0,0,0,0.05); }
-h2 { color: #2563eb; margin-bottom: 20px; }
+.main { max-width:700px; margin:60px auto; padding:32px; }
+.card { background:white; padding:32px; border-radius:14px; box-shadow:0 8px 24px rgba(0,0,0,0.05); }
+h2 { color:#2563eb; margin-bottom:20px; }
 
-form { display: flex; flex-direction: column; gap: 18px; }
-input, textarea { padding: 14px; border-radius: 8px; border: 1px solid #cbd5e1; font-family: inherit; font-size: 15px; }
-textarea { min-height: 120px; resize: vertical; }
-button { padding: 14px; border: none; border-radius: 10px; background: #2563eb; color: white; font-weight: 600; cursor: pointer; transition: 0.2s; }
-button:hover { background: #1e40af; }
+form { display:flex; flex-direction:column; gap:18px; }
+input, textarea { padding:14px; border-radius:8px; border:1px solid #cbd5e1; font-family:inherit; font-size:15px; }
+textarea { min-height:120px; resize:vertical; }
+button { padding:14px; border:none; border-radius:10px; background:#2563eb; color:white; font-weight:600; cursor:pointer; transition:0.2s; }
+button:hover { background:#1e40af; }
 </style>
 </head>
 
@@ -47,8 +47,7 @@ button:hover { background: #1e40af; }
   <div class="card">
     <h2>Send Feedback</h2>
 
-    <!-- Netlify Form -->
-    <form name="feedback" method="POST" netlify action="success.html">
+    <form name="feedback" method="POST" data-netlify="true" action="success.html">
       <input type="hidden" name="form-name" value="feedback">
 
       <input type="text" name="name" placeholder="Your Name" required>
@@ -63,4 +62,3 @@ button:hover { background: #1e40af; }
 
 </body>
 </html>
-
