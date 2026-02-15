@@ -158,6 +158,11 @@ body {
   margin-top: 16px;
 }
 
+.nav-tabs a {
+  text-decoration: none;
+  color: white;
+}
+
 /* ---------- UPCOMING ---------- */
 .upcoming {
   background: linear-gradient(135deg,#2563eb,#1e40af);
@@ -216,6 +221,7 @@ body {
     <div class="nav-tab" data-tab="license">License</div>
     <div class="nav-tab" data-tab="connect">Connect</div>
     <div class="nav-tab" data-tab="screenshots">Screenshots</div>
+    <a class="nav-tab" href="/feedback/">Feedback</a>
   </div>
 </div>
 
@@ -232,7 +238,7 @@ body {
     
     <div class="card upcoming">
       <h3>v3.1.0 Incoming on 10 March🚀</h3>
-      <p>Expect :- Better structure, optimization , more plugin control , Restore back all previous session tabs.</p>
+      <p>Expect :- Better structure, optimization , more plugin control , Restore back all previous session tabs , Bug Fixes</p>
     </div>
 
     <div class="card">
@@ -331,7 +337,7 @@ body {
 </div>
 
 <script>
-const tabs = document.querySelectorAll('.nav-tab');
+const tabs = document.querySelectorAll('.nav-tab[data-tab]');
 const contents = document.querySelectorAll('.tab-content');
 
 tabs.forEach(tab => {
