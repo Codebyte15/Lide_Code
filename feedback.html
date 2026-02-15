@@ -21,7 +21,6 @@ body {
   color: #0f172a;
 }
 
-/* NAVBAR */
 .navbar {
   display: flex;
   align-items: center;
@@ -58,7 +57,6 @@ body {
   color: #60a5fa;
 }
 
-/* MAIN */
 .main {
   max-width: 700px;
   margin: 60px auto;
@@ -77,7 +75,6 @@ h2 {
   margin-bottom: 20px;
 }
 
-/* FORM */
 form {
   display: flex;
   flex-direction: column;
@@ -112,7 +109,6 @@ button:hover {
   background: #1e40af;
 }
 
-/* SUCCESS MESSAGE */
 .success {
   margin-top: 16px;
   color: #16a34a;
@@ -126,7 +122,7 @@ button:hover {
 
 <div class="navbar">
   <div class="nav-left">
-    <img src="lide.png">
+    <img src="lide.png" alt="LIDE Logo">
     <div class="nav-title">LIDE Editor</div>
   </div>
 
@@ -139,8 +135,8 @@ button:hover {
   <div class="card">
     <h2>Send Feedback</h2>
 
-    <!-- NETLIFY FORM READY -->
-    <form name="feedback" method="POST" data-netlify="true">
+    <!-- Netlify Form -->
+    <form name="feedback" method="POST" netlify>
       <input type="hidden" name="form-name" value="feedback">
 
       <input type="text" name="name" placeholder="Your Name" required>
@@ -160,8 +156,20 @@ button:hover {
 const form = document.querySelector("form");
 const successMessage = document.getElementById("successMessage");
 
-form.addEventListener("submit", function() {
-  successMessage.style.display = "block";
+form.addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const formData = new FormData(form);
+
+  fetch("/", {
+    method: "POST",
+    body: formData
+  })
+  .then(() => {
+    successMessage.style.display = "block";
+    form.reset();
+  })
+  .catch(() => alert("Submission failed. Please try again."));
 });
 </script>
 
