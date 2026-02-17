@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LIDE Editor v3.1.0 Early Test</title>
+
+<link rel="icon" href="lide.png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 32px;
+  background: #020617;
+  color: white;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.nav-left img { width: 40px; }
+
+.nav-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.nav-tabs a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+}
+
+.nav-tabs a:hover { color: #60a5fa; }
+
+/* MAIN */
+.main {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 28px;
+  padding: 32px;
+  max-width: 1400px;
+  margin: auto;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 14px;
+  padding: 22px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+}
+
+.card h3 {
+  color: #2563eb;
+  margin-bottom: 12px;
+}
+
+.badge {
+  display: inline-block;
+  background: #f97316;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  margin-bottom: 12px;
+}
+
+.btn {
+  display: block;
+  text-align: center;
+  padding: 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  color: white;
+  background: #16a34a;
+  transition: 0.2s;
+}
+
+.btn:hover { background: #15803d; }
+
+.content {
+  background: white;
+  border-radius: 14px;
+  padding: 28px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+}
+
+.content h2 {
+  color: #2563eb;
+  margin-bottom: 16px;
+}
+
+/* REVIEW SECTION */
+.review-box {
+  margin-top: 30px;
+  padding: 20px;
+  background: #f8fafc;
+  border-radius: 12px;
+}
+
+.review-item {
+  padding: 15px;
+  background: white;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+}
+
+.review-item h4 {
+  color: #2563eb;
+  margin-bottom: 6px;
+}
+
+.review-stars {
+  color: gold;
+  margin-bottom: 8px;
+}
+
+/* FEEDBACK */
+form { margin-top: 20px; }
+
+textarea {
+  width: 100%;
+  height: 120px;
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  resize: none;
+}
+
+.stars {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  gap: 6px;
+  margin: 10px 0;
+}
+
+.stars input { display: none; }
+
+.stars label {
+  font-size: 24px;
+  color: #ccc;
+  cursor: pointer;
+}
+
+.stars input:checked ~ label,
+.stars label:hover,
+.stars label:hover ~ label {
+  color: gold;
+}
+
+.submit-btn {
+  margin-top: 15px;
+  padding: 12px;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  background: #2563eb;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.submit-btn:hover { background: #1e40af; }
+
+@media (max-width: 900px) {
+  .main { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+  <div class="nav-left">
+    <img src="lide.png">
+    <div class="nav-title">LIDE Editor v3.1.0</div>
+  </div>
+  <div class="nav-tabs">
+    <a href="index.html">Home</a>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+  <!-- LEFT SIDE -->
+  <div class="sidebar">
+
+    <div class="card">
+      <span class="badge">EARLY TEST RELEASE</span>
+      <h3>Download v3.1.0 Test Build</h3>
+      <a class="btn" href="https://github.com/Codebyte15/LIDE_testapp/releases/download/v3.1.0/LIDE_early_release_for_testing_v3.1.0.zip">
+        Download Test Version
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Important Notice</h3>
+      <p>This is an early testing build. Some features may be unstable.</p>
+      <p>Please leave a review after testing.</p>
+    </div>
+
+  </div>
+
+  <!-- RIGHT SIDE -->
+  <div class="content">
+
+    <h2>Test LIDE APP VERSION v3.1.0</h2>
+    <p>
+      This build includes structural improvements, optimization upgrades,
+      enhanced plugin control, session restore, and major bug fixes.
+    </p>
+    <!-- FEEDBACK FORM -->
+    <form name="feedback" method="POST" data-netlify="true" action="/success.html">
+      <input type="hidden" name="form-name" value="feedback">
+
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+
+      <div class="stars">
+        <input type="radio" id="star5" name="rating" value="5" required><label for="star5">★</label>
+        <input type="radio" id="star4" name="rating" value="4"><label for="star4">★</label>
+        <input type="radio" id="star3" name="rating" value="3"><label for="star3">★</label>
+        <input type="radio" id="star2" name="rating" value="2"><label for="star2">★</label>
+        <input type="radio" id="star1" name="rating" value="1"><label for="star1">★</label>
+      </div>
+
+      <textarea name="feedback" placeholder="Write your review here..." required></textarea>
+
+      <button class="submit-btn" type="submit">Submit Review</button>
+    </form>
+
+  </div>
+</div>
+
+</body>
+</html>
