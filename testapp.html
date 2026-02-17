@@ -235,20 +235,21 @@ textarea {
       This build includes structural improvements, optimization upgrades,
       enhanced plugin control, session restore, and major bug fixes.
     </p>
-    <!-- FEEDBACK FORM -->
-    <form name="feedback" method="POST" data-netlify="true" action="success.html">
-      <input type="hidden" name="form-name" value="feedback">
-
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" placeholder="Your Feedback..." required></textarea>
-
-      <button class="submit-btn" type="submit">Submit Feedback</button>
-    </form>
+    <div class="review-box">
+      <h3>Share Your Feedback</h3>
+      <p>
+        Found a bug or have suggestions? We'd love to hear from you!
+      </p>
+    
+      <a class="btn" 
+         style="margin-top:15px; background:#2563eb;"
+         href="feedback.html">
+         Give Feedback
+      </a>
+    </div>
 
   </div>
 </div>
 
 </body>
 </html>
-
