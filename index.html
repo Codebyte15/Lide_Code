@@ -204,6 +204,34 @@ body {
 #connect a:hover {
   text-decoration: underline;
 }
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* Hide nav-tabs by default on mobile */
+@media (max-width: 900px) {
+  .hamburger { display: block; }
+  #navTabs {
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    background: #020617;
+    position: absolute;
+    top: 70px;
+    right: 32px;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 1000;
+  }
+  #navTabs.show { display: flex; }
+  #navTabs a, #navTabs .nav-tab {
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+  }
+}
 
 </style>
 </head>
@@ -213,10 +241,16 @@ body {
 <!-- NAVBAR -->
 <div class="navbar">
   <div class="nav-left">
-    <img src="lide.png">
+    <img src="lide.png" alt="Logo">
     <div class="nav-title">LIDE Editor v3.0.1</div>
   </div>
-  <div class="nav-tabs">
+
+  <!-- Hamburger menu icon for mobile -->
+  <div class="hamburger" id="hamburger">
+    &#9776; <!-- ☰ icon -->
+  </div>
+
+  <div class="nav-tabs" id="navTabs">
     <div class="nav-tab active" data-tab="docs">Docs</div>
     <div class="nav-tab" data-tab="updates">Updates</div>
     <div class="nav-tab" data-tab="license">License</div>
@@ -360,6 +394,13 @@ body {
 </div>
 
 <script>
+const hamburger = document.getElementById('hamburger');
+const navTabs = document.getElementById('navTabs');
+
+hamburger.addEventListener('click', () => {
+  navTabs.classList.toggle('show');
+});
+
 const tabs = document.querySelectorAll('.nav-tab[data-tab]');
 const contents = document.querySelectorAll('.tab-content');
 
@@ -369,6 +410,10 @@ tabs.forEach(tab => {
     contents.forEach(c => c.classList.remove('active'));
     tab.classList.add('active');
     document.getElementById(tab.dataset.tab).classList.add('active');
+
+    if(navTabs.classList.contains('show')) {
+      navTabs.classList.remove('show');
+    }
   }
 });
 </script>
