@@ -51,7 +51,6 @@ Instagram: @astro_moinak
 
 🔗 Links
 --------
-Netlify: https://lide15.netlify.app
 SourceForge: https://sourceforge.net/projects/lide-editor/
 
 ------------------------------------------------------------
