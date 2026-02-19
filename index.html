@@ -232,6 +232,59 @@ body {
     text-decoration: none;
   }
 }
+/* ---------- FEEDBACK FORM ---------- */
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+.review-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 24px;
+  border-radius: 14px;
+  margin-top: 20px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+}
+
+.review-box h3 {
+  margin-bottom: 10px;
+  color: #2563eb;
+}
+
+.review-box p {
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+.warning-box {
+  background: #fff7ed;
+  border: 1px solid #fdba74;
+  color: #9a3412;
+  padding: 16px 18px;
+  border-radius: 12px;
+  margin-bottom: 18px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
 
 </style>
 </head>
@@ -256,6 +309,8 @@ body {
     <div class="nav-tab" data-tab="license">License</div>
     <div class="nav-tab" data-tab="connect">Connect</div>
     <div class="nav-tab" data-tab="screenshots">Screenshots</div>
+    <div class="nav-tab" data-tab="testapp">Testapp</div>
+    <div class="nav-tab" data-tab="feedback">Feedback</div>
 
   </div>
 </div>
@@ -365,7 +420,7 @@ body {
 
       <p class="connect-item">
         <strong>Website</strong> :--&gt;
-        <a href="https://codebyte15.github.io/Lide_Code/" target="_blank">https://codebyte15.github.io/Lide_Code/</a>
+        <a href="https://lide15.netlify.app" target="_blank">https://lide15.netlify.app</a>
       </p>
 
       <p class="connect-item">
@@ -388,6 +443,72 @@ body {
       <h2>Screenshots</h2>
       <img src="https://github.com/user-attachments/assets/9bb4d72a-eb43-4229-aee1-1efaa5a558ff">
     </div>
+    
+    <div class="tab-content" id="feedback">
+      <h2>Feedback</h2>
+      <p style="margin-bottom:20px;">Have suggestions or bug reports? Let us know!</p>
+
+      <form name="lide-feedback" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/success.html">
+      <input type="hidden" name="form-name" value="lide-feedback">
+      <input type="hidden" name="bot-field">
+
+      <div class="form-group">
+      <label>Name</label>
+      <input type="text" name="name" required>
+      </div>
+
+      <div class="form-group">
+      <label>Email</label>
+      <input type="email" name="email" required>
+      </div>
+
+      <div class="form-group">
+      <label>Message</label>
+      <textarea name="message" rows="5" required></textarea>
+      </div>
+
+      <button type="submit" class="btn">Submit Feedback</button>
+      </form>
+    </div> 
+    
+    <div class="tab-content" id="testapp">
+
+      <h2>Test LIDE APP VERSION v3.1.0</h2>
+
+      <div class="warning-box">
+        ⚠️ This is an early testing build and is <strong>not stable</strong>. 
+        It may contain bugs, incomplete features, or unexpected behavior. 
+        Please use it only for testing purposes.
+      </div>
+
+      <p style="margin: 18px 0 22px 0; line-height:1.6;">
+        This build includes structural improvements, optimization upgrades,
+        enhanced plugin control, session restore, and major bug fixes.
+      </p>
+
+      <a class="btn"
+         style="margin-bottom:30px;"
+         href="https://github.com/Codebyte15/LIDE_testapp/releases/download/v3.1.0/LIDE_early_release_for_testing_v3.1.0.zip">
+         Download Early Release v3.1.0
+      </a>
+
+      <div class="review-box">
+        <h3>Share Your Feedback</h3>
+        <p>
+          Found a bug or have suggestions? We'd love to hear from you!
+        </p>
+    
+        <a class="btn nav-tab"
+           data-tab="feedback"
+           style="margin-top:18px;">
+           Give Feedback
+        </a>
+      </div>
+
+    </div>
+
+
+  </div>
 
   </div>
 </div>
