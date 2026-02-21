@@ -114,7 +114,7 @@ In this micro version update, you will get:
 
 1) Corrected Download Size Popup for new update
 
-2) Live Server Plugin Extension
+2) Live Server Plugin Extension ( NOTE:- THIS PLUGIN IS NOW REMOVED)
 ------------------------------------------------------------
 
 🤝 Contributing
